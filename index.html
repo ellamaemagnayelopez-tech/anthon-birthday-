@@ -2300,7 +2300,13 @@ button {
     font-size: 100px;
     margin-top: 25px;
 
-    transition: transform .15s ease;
+    opacity: .12;
+    filter: grayscale(1);
+
+    transition:
+        opacity .25s ease,
+        filter .25s ease,
+        transform .15s ease;
 }
 
 .gift-box.shake {
@@ -4787,8 +4793,6 @@ function answerQuiz(isCorrect) {
 }
 
 
-let giftClicks = 0;
-
 let giftPercent = 0;
 
 function openGift() {
@@ -4805,36 +4809,45 @@ function openGift() {
 
     gift.classList.add("shake");
 
+    gift.style.opacity =
+        0.12 + (giftPercent / 100) * 0.88;
+
+    gift.style.filter =
+        "grayscale(" + (1 - giftPercent / 100) + ")";
+
     progressBar.style.width = giftPercent + "%";
     percent.textContent = giftPercent + "%";
 
     if (giftPercent >= 100) {
 
-        gift.style.display = "none";
+        gift.style.transform = "scale(1.4)";
 
-        document
-            .getElementById("giftInstruction")
-            .style.display = "none";
+        setTimeout(function() {
 
-        document
-            .getElementById("giftPercent")
-            .style.display = "none";
+            gift.style.display = "none";
 
-        document
-            .querySelector(".gift-progress")
-            .style.display = "none";
+            document
+                .getElementById("giftInstruction")
+                .style.display = "none";
 
-        document
-            .getElementById("giftReveal")
-            .classList.remove("hidden");
+            document
+                .getElementById("giftPercent")
+                .style.display = "none";
 
+            document
+                .querySelector(".gift-progress")
+                .style.display = "none";
+
+            document
+                .getElementById("giftReveal")
+                .classList.remove("hidden");
+
+        }, 400);
     }
-
 }
 
-}
 
-    function showMyMessage() {
+function showMyMessage() {
 
     document.querySelectorAll(".chapter-screen").forEach(function(screen) {
         screen.classList.add("hidden");
@@ -4845,7 +4858,6 @@ function openGift() {
         .classList.remove("hidden");
 
 }
-  
 </script>
 
 </body>
