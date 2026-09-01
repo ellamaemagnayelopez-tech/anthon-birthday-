@@ -2044,6 +2044,107 @@ button {
     border-radius: 12px;
     display: block;
 }
+    /* COCO & CHICHI */
+
+#cocoChichiScreen {
+    overflow: hidden;
+}
+
+.dog-intro {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 15px;
+}
+
+.dog-intro span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #a27a78;
+}
+
+.dog-intro h1 {
+    font-size: clamp(30px, 7vw, 42px);
+    line-height: 1.1;
+    margin: 8px 0;
+}
+
+.dog-intro p {
+    font-size: 12px;
+    color: #77716c;
+    line-height: 1.6;
+}
+
+.dog-rain {
+    position: relative;
+    width: 100%;
+    height: 430px;
+}
+
+.dog-rain img {
+    position: absolute;
+    width: 110px;
+    height: 140px;
+    object-fit: cover;
+
+    border: 6px solid white;
+    border-radius: 10px;
+
+    box-shadow: 0 10px 25px rgba(60,45,35,.15);
+
+    animation: dogFall 7s linear infinite;
+}
+
+.dog-rain img:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.dog-rain img:nth-child(2) {
+    right: 5%;
+    animation-delay: 1s;
+}
+
+.dog-rain img:nth-child(3) {
+    left: 18%;
+    animation-delay: 2s;
+}
+
+.dog-rain img:nth-child(4) {
+    right: 18%;
+    animation-delay: 3s;
+}
+
+.dog-rain img:nth-child(5) {
+    left: 35%;
+    animation-delay: 4s;
+}
+
+.dog-rain img:nth-child(6) {
+    right: 35%;
+    animation-delay: 5s;
+}
+
+@keyframes dogFall {
+    0% {
+        top: -160px;
+        opacity: 0;
+        transform: rotate(-8deg);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 430px;
+        opacity: 0;
+        transform: rotate(8deg);
+    }
+}
   
 </style>
 </head>
@@ -3573,6 +3674,45 @@ button {
 
 </div>
 
+    <!-- COCO & CHICHI -->
+
+<div class="chapter-screen hidden" id="cocoChichiScreen">
+
+    <div class="chapter-header">
+        <span>04 / FAMILY</span>
+        <span>COCO & CHICHI 🐶</span>
+    </div>
+
+    <div class="dog-intro">
+
+        <span>THE FURRY MEMBERS</span>
+
+        <h1>
+            And of course...<br>
+            Coco & Chichi. 🐶🤍
+        </h1>
+
+        <p>
+            Coco & Chichi had to be here too. 🐶🤍<br>
+            Because what kind of birthday would it be
+            without your two little babies?
+        </p>
+
+    </div>
+
+    <div class="dog-rain">
+
+        <img src="coco1.jpg" alt="Coco">
+        <img src="chichi1.jpg" alt="Chichi">
+        <img src="coco2.jpg" alt="Coco">
+        <img src="chichi2.jpg" alt="Chichi">
+        <img src="coco3.jpg" alt="Coco">
+        <img src="chichi3.jpg" alt="Chichi">
+
+    </div>
+
+</div>
+
 <script>
 
 /* ================= OPENING ================= */
@@ -4260,6 +4400,32 @@ function answerQuiz(isCorrect) {
         .classList.remove("hidden");
 
   }
+
+    function showCocoChichi() {
+
+    document.querySelectorAll(".chapter-screen").forEach(function(screen) {
+        screen.classList.add("hidden");
+    });
+
+    const cocoChichi = document.getElementById("cocoChichiScreen");
+
+    cocoChichi.classList.remove("hidden");
+    cocoChichi.style.display = "flex";
+
+}
+
+    function showCocoChichi() {
+
+    document.querySelectorAll(".chapter-screen").forEach(function(screen) {
+        screen.classList.add("hidden");
+    });
+
+    const cocoChichi = document.getElementById("cocoChichiScreen");
+
+    cocoChichi.classList.remove("hidden");
+    cocoChichi.style.display = "flex";
+
+}
   
 </script>
 
