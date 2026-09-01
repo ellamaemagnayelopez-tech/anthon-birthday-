@@ -1301,20 +1301,26 @@ button {
 /* LPT */
 
 .lpt-layout {
-    width: min(85vw, 850px);
-    height: 230px;
+    width: min(90vw, 850px);
+    min-height: 300px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+
     position: relative;
-    margin: 0 auto;
 }
 
 .lpt-photo {
-    position: absolute;
-
-    left: 50%;
-    top: 5px;
+    position: relative;
 
     width: 220px;
     height: 270px;
+
+    flex-shrink: 0;
 
     background: #e8dfd7;
     border: 8px solid white;
@@ -1332,10 +1338,7 @@ button {
 }
 
 .lpt-note {
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
+    position: relative;
 
     width: 270px;
 
@@ -1705,7 +1708,7 @@ button {
 }
 .lpt-quiz {
     width: min(75vw, 650px);
-    margin: 0 auto;
+    margin: 0 auto 20px;
     padding: 12px 18px;
     background: #fffdf9;
     border-radius: 12px;
