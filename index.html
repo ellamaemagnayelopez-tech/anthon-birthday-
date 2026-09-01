@@ -4230,19 +4230,18 @@ function answerQuiz(isCorrect) {
 
   }
 
-  function showLingling() {
+ function showLingling() {
 
-    document
-        .querySelectorAll(".chapter-screen")
-        .forEach(function(screen) {
-            screen.classList.add("hidden");
-        });
+    document.querySelectorAll(".chapter-screen").forEach(function(screen) {
+        screen.classList.add("hidden");
+    });
 
-    document
-        .getElementById("linglingScreen")
-        .classList.remove("hidden");
+    const lingling = document.getElementById("linglingScreen");
 
-  }
+    lingling.classList.remove("hidden");
+    lingling.style.display = "block";
+
+}
 
   function showFamily() {
 
