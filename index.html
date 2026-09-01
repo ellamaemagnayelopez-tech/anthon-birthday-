@@ -494,57 +494,45 @@ button {
 
 .childhood-layout {
     width: min(92vw, 430px);
-    height: 360px;
+    height: 420px;
     position: relative;
+    margin: 25px auto 0;
 }
-
+  
 .child-photo {
     position: absolute;
-
-    background: #eee5de;
-
+    width: 135px;
+    height: 165px;
+    background: #eee7df;
     border: 7px solid white;
-
-    box-shadow:
-        0 12px 30px rgba(60,45,35,.12);
+    box-shadow: 0 8px 20px rgba(60,45,35,.12);
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    font-size: 55px;
-
-    z-index: 2;
+    font-size: 38px;
 }
 
 .child-photo small {
-    font-size: 9px;
-    color: #9a918a;
-    letter-spacing: 1px;
     margin-top: 8px;
+    font-size: 9px;
+    letter-spacing: 1px;
 }
 
-.photo-one {
-    width: 210px;
-    height: 245px;
-
-    left: 4%;
-    top: 10px;
-
-    transform: rotate(-5deg);
+.child-photo.photo-one {
+    left: 35px;
+    top: 25px;
+    transform: rotate(-6deg);
+    z-index: 1;
 }
 
-.photo-two {
-    width: 175px;
-    height: 205px;
-
-    right: 2%;
+.child-photo.photo-two {
+    left: 175px;
     top: 65px;
-
     transform: rotate(6deg);
-
-    z-index: 3;
+    z-index: 2;
 }
 
 .child-note {
@@ -1993,6 +1981,48 @@ button {
     line-height: 1.5;
     font-size: 13px;
 }
+
+  /* ================= SIBLING PHOTOS ================= */
+
+.sibling-photos {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    width: 100%;
+    max-width: 380px;
+    margin: 25px auto;
+}
+
+.sibling-photo {
+    width: 155px;
+    height: 190px;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    background: #f3f3f3;
+    flex-shrink: 0;
+}
+
+.sibling-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sibling-photo small {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.55);
+    color: white;
+    padding: 5px 7px;
+    border-radius: 6px;
+    font-size: 10px;
+    text-align: center;
+}
+  
 </style>
 </head>
 
@@ -2994,13 +3024,13 @@ button {
 
     <button
     id="lptContinue"
-    class="yes"
+    class="yes hidden"
     style="margin-top:12px; position:relative; z-index:20;"
     onclick="showTeacher()">
 
     LICENSE UNLOCKED → 🎓
 
-        </button>
+    </button>
 
     </div>
 
@@ -3299,9 +3329,7 @@ button {
 
 <!-- OUR MEMORIES -->
 
-<div
-    class="chapter-screen hidden"
-    id="usScreen">
+<div class="chapter-screen hidden" id="usScreen">
 
     <div class="chapter-header">
         <span>OUR MEMORIES</span>
@@ -3348,27 +3376,177 @@ button {
         </p>
 
         <button
-            class="yes"
-            onclick="showVideoGreets()">
+    class="yes"
+    onclick="showTintin()">
 
-            okay, now for the messages → ❤️
+    okay, now for the messages → ❤️
 
         </button>
 
     </div>
 
 </div>
+  <!-- TINTIN -->
 
-    <p class="memory-caption">
-        9 years, countless memories,
-        and somehow... you're still my favorite person. 🥹
+<div
+    class="chapter-screen hidden"
+    id="tintinScreen">
+
+    <div class="chapter-header">
+        <span>01 / FAMILY</span>
+        <span>TINTIN</span>
+    </div>
+
+    <div class="family-intro">
+
+        <span>THEN & NOW</span>
+
+        <h1>
+            From little Tintin<br>
+            to who you are today. 🤍
+        </h1>
+
+        <p>
+            Some things change.
+            Some things stay the same.
+        </p>
+
+    <div class="sibling-photos">
+
+    <div class="sibling-photo">
+        <img src="tintin-young.jpg" alt="Tintin childhood">
+        <small>THEN</small>
+    </div>
+
+    <div class="sibling-photo">
+        <img src="tintin-now.jpg" alt="Tintin now">
+        <small>NOW</small>
+    </div>
+
+    </div>
+
+    <div class="sibling-message">
+        <p>
+            A little message from Tintin
+            for your special day. 🤍
+        </p>
+    </div>
+
+    <div class="sibling-video">
+
+        <video controls playsinline>
+            <source src="tintin.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+    <button
+        class="yes"
+        onclick="showLingling()">
+
+        next message → ❤️
+
+    </button>
+
+</div>
+
+  <!-- LINGLING -->
+
+<div class="chapter-screen hidden" id="linglingScreen">
+
+    <div class="chapter-header">
+        <span>02 / FAMILY</span>
+        <span>LINGLING</span>
+    </div>
+
+    <div class="family-intro">
+
+        <span>THEN & NOW</span>
+
+        <h1>
+            Little Lingling...
+        </h1>
+
+        <p>
+            And now, here's the person
+            who gets to call you kuya. 🤍
+        </p>
+
+    </div>
+
+    <div class="sibling-photos">
+
+    <div class="sibling-photo">
+        <img src="lingling-young.jpg" alt="Lingling childhood">
+        <small>THEN</small>
+    </div>
+
+    <div class="sibling-photo">
+        <img src="lingling-now.jpg" alt="Lingling now">
+        <small>NOW</small>
+    </div>
+
+    </div>
+
+    <div class="sibling-video">
+
+        <video controls playsinline>
+            <source src="lingling.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+    <button
+        class="yes"
+        onclick="showFamily()">
+
+        next → 🤍
+
+    </button>
+
+</div>
+
+  <!-- SERVANO FAMILY -->
+
+<div class="chapter-screen hidden" id="familyScreen">
+
+    <div class="chapter-header">
+        <span>03 / FAMILY</span>
+        <span>SERVANO FAM</span>
+    </div>
+
+    <div class="family-intro">
+
+        <span>THE PEOPLE BEHIND YOU</span>
+
+        <h1>
+            The Servano Fam. 🤍
+        </h1>
+
+        <p>
+            Because birthdays aren't just
+            about one person...
+            they're about the people who
+            made them who they are.
+        </p>
+
+    </div>
+
+    <div class="family-photo">
+        <img
+            src="servano-family.jpg"
+            alt="Servano Family">
+    </div>
+
+    <p class="family-caption">
+        One photo, a whole lot of memories. 🤍
     </p>
 
     <button
         class="yes"
-        onclick="showVideoGreets()">
+        onclick="showCocoChichi()">
 
-        okay, now for the messages → ❤️
+        next → 🐶❤️
 
     </button>
 
@@ -4014,6 +4192,48 @@ function answerQuiz(isCorrect) {
     document.getElementById("usScreen").classList.add("hidden");
 
     document.getElementById("videoGreetsScreen").classList.remove("hidden");
+
+  }
+
+  function showTintin() {
+
+    document
+        .querySelectorAll(".chapter-screen")
+        .forEach(function(screen) {
+            screen.classList.add("hidden");
+        });
+
+    document
+        .getElementById("tintinScreen")
+        .classList.remove("hidden");
+
+  }
+
+  function showLingling() {
+
+    document
+        .querySelectorAll(".chapter-screen")
+        .forEach(function(screen) {
+            screen.classList.add("hidden");
+        });
+
+    document
+        .getElementById("linglingScreen")
+        .classList.remove("hidden");
+
+  }
+
+  function showFamily() {
+
+    document
+        .querySelectorAll(".chapter-screen")
+        .forEach(function(screen) {
+            screen.classList.add("hidden");
+        });
+
+    document
+        .getElementById("familyScreen")
+        .classList.remove("hidden");
 
   }
   
