@@ -1,0 +1,4023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For By ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #faf7f3;
+    color: #292725;
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+}
+
+.screen {
+    min-height: 100vh;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+button {
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    border: none;
+}
+
+.sparkle {
+    position: absolute;
+    color: #c99491;
+    font-size: 18px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.s1 {
+    top: 16%;
+    left: 15%;
+}
+
+.s2 {
+    top: 25%;
+    right: 13%;
+    animation-delay: .8s;
+}
+
+.s3 {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 1.2s;
+}
+
+.s4 {
+    bottom: 25%;
+    right: 17%;
+    animation-delay: .4s;
+}
+
+.flower {
+    position: absolute;
+    color: #d9aaa5;
+    font-size: 20px;
+    opacity: .65;
+}
+
+.f1 {
+    top: 14%;
+    right: 23%;
+}
+
+.f2 {
+    bottom: 16%;
+    left: 15%;
+}
+
+/* OPENING */
+
+.opening-icon {
+    font-size: 45px;
+    margin-bottom: 18px;
+    animation: float 2.5s ease-in-out infinite;
+}
+
+.opening-title {
+    font-size: clamp(38px, 9vw, 58px);
+    line-height: 1.08;
+    margin: 0;
+}
+
+.subtitle {
+    color: #77716c;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 350px;
+}
+
+.buttons {
+    margin-top: 28px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.yes {
+    background: #292725;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+.no {
+    background: transparent;
+    color: #77716c;
+    padding: 14px 20px;
+}
+
+.message {
+    min-height: 25px;
+    margin-top: 18px;
+    color: #a06f6b;
+    font-size: 14px;
+}
+
+/* CHARACTERS */
+
+.character {
+    font-size: 54px;
+    margin-bottom: 15px;
+    animation: float 2.5s ease-in-out infinite;
+}
+
+.character.small {
+    font-size: 42px;
+}
+
+/* SAD SCREEN */
+
+.sad-title {
+    font-size: 42px;
+    margin: 0;
+}
+
+.back {
+    margin-top: 25px;
+    background: #292725;
+    color: white;
+    padding: 13px 24px;
+    border-radius: 30px;
+}
+
+/* CHAPTER INTRO */
+
+.chapter-number {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #a27a78;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.intro-title {
+    font-size: clamp(35px, 8vw, 52px);
+    line-height: 1.15;
+    margin: 0;
+    max-width: 600px;
+}
+
+.arrow-button {
+    margin-top: 30px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #292725;
+    color: white;
+    font-size: 20px;
+}
+
+/* CHAPTER */
+
+.chapter-screen {
+    min-height: 100vh;
+    width: 100%;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  
+}
+
+.chapter-header {
+    position: absolute;
+    top: 23px;
+    left: 25px;
+    right: 25px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #9a918a;
+}
+
+/* PHOTO */
+
+.photo-card {
+    width: min(80vw, 320px);
+    height: min(60vw, 240px);
+    background: #e8dfd7;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 22px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(60,45,35,.08);
+    overflow: hidden;
+}
+
+.photo-card::before {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 15px;
+    background: #d8aaa5;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    opacity: .7;
+}
+
+.photo-placeholder {
+    font-size: 65px;
+}
+
+.photo-date {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #a27a78;
+    font-weight: 600;
+}
+
+.photo-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin: 8px 0;
+}
+
+.photo-text {
+    max-width: 360px;
+    color: #77716c;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.next {
+    margin-top: 20px;
+    background: transparent;
+    color: #292725;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* ANIMATION */
+
+@keyframes float {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+.runaway {
+    position: fixed !important;
+    z-index: 100;
+}
+
+.fade {
+    animation: fadeIn .7s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* PASSWORD */
+
+.password-input {
+    margin-top: 18px;
+    width: 160px;
+    padding: 13px;
+    border-radius: 14px;
+    border: 1px solid #ddd3cb;
+    background: white;
+    text-align: center;
+    font-size: 18px;
+    outline: none;
+}
+
+/* ACHIEVEMENT */
+
+.achievement {
+    width: min(90vw, 390px);
+    padding: 28px 20px;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 15px 45px rgba(60,45,35,.08);
+}
+
+.trophy {
+    font-size: 58px;
+    animation: float 2.5s ease-in-out infinite;
+}
+
+.achievement h1 {
+    font-size: 35px;
+    margin: 12px 0 8px;
+}
+
+.achievement p {
+    color: #77716c;
+    line-height: 1.6;
+    font-size: 14px;
+}
+/* SCRAPBOOK BABY LAYOUT */
+
+.scrapbook-top {
+    width: min(90vw, 430px);
+    display: flex;
+    justify-content: space-between;
+    color: #a27a78;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.scrapbook-title {
+    font-size: clamp(34px, 8vw, 48px);
+    margin: 0 0 18px;
+}
+
+.baby-layout {
+    width: min(92vw, 430px);
+    height: 380px;
+    position: relative;
+}
+
+.big-photo {
+    position: absolute;
+    left: 5%;
+    top: 5px;
+
+    width: 230px;
+    height: 270px;
+
+    background: #e7ddd4;
+    border: 7px solid white;
+
+    box-shadow: 0 12px 30px rgba(60,45,35,.12);
+
+    transform: rotate(-4deg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 65px;
+}
+
+.big-photo small,
+.small-photo small {
+    font-size: 9px;
+    color: #9a918a;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.small-photo {
+    position: absolute;
+    right: 2%;
+    top: 95px;
+
+    width: 145px;
+    height: 165px;
+
+    background: #eee5de;
+    border: 6px solid white;
+
+    box-shadow: 0 10px 25px rgba(60,45,35,.10);
+
+    transform: rotate(6deg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 42px;
+}
+
+.cute-note {
+    position: absolute;
+
+    left: 35%;
+    bottom: 0;
+
+    width: 235px;
+
+    background: #fffdf9;
+
+    padding: 15px 18px;
+
+    border-radius: 5px;
+
+    box-shadow: 0 8px 25px rgba(60,45,35,.08);
+
+    transform: rotate(2deg);
+
+    text-align: left;
+
+    z-index: 5;
+}
+
+.cute-note strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+}
+
+.cute-note p {
+    color: #77716c;
+    font-size: 11px;
+    line-height: 1.55;
+    margin: 7px 0 0;
+}
+
+.note-character {
+    position: absolute;
+    right: -25px;
+    top: -35px;
+    font-size: 38px;
+    animation: float 2.5s ease-in-out infinite;
+}
+
+.tape {
+    position: absolute;
+    z-index: 10;
+
+    top: -7px;
+    left: 90px;
+
+    font-size: 22px;
+
+    color: #d8aaa5;
+}
+
+  /* CHILDHOOD COLLAGE */
+
+.childhood-layout {
+    width: min(92vw, 430px);
+    height: 360px;
+    position: relative;
+}
+
+.child-photo {
+    position: absolute;
+
+    background: #eee5de;
+
+    border: 7px solid white;
+
+    box-shadow:
+        0 12px 30px rgba(60,45,35,.12);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 55px;
+
+    z-index: 2;
+}
+
+.child-photo small {
+    font-size: 9px;
+    color: #9a918a;
+    letter-spacing: 1px;
+    margin-top: 8px;
+}
+
+.photo-one {
+    width: 210px;
+    height: 245px;
+
+    left: 4%;
+    top: 10px;
+
+    transform: rotate(-5deg);
+}
+
+.photo-two {
+    width: 175px;
+    height: 205px;
+
+    right: 2%;
+    top: 65px;
+
+    transform: rotate(6deg);
+
+    z-index: 3;
+}
+
+.child-note {
+    position: absolute;
+
+    left: 19%;
+    bottom: 0;
+
+    width: 270px;
+
+    background: #fffdf9;
+
+    padding: 16px 20px;
+
+    text-align: left;
+
+    box-shadow:
+        0 8px 25px rgba(60,45,35,.08);
+
+    transform: rotate(1deg);
+
+    z-index: 5;
+}
+
+.child-note strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+}
+
+.child-note p {
+    color: #77716c;
+    font-size: 11px;
+    line-height: 1.55;
+    margin: 7px 0 0;
+}
+/* HIGH SCHOOL YEARBOOK */
+
+.school-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #a27a78;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.yearbook-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(35px, 8vw, 48px);
+    margin: 0 0 18px;
+}
+
+.yearbook-layout {
+    width: min(92vw, 430px);
+    height: 365px;
+    position: relative;
+}
+
+.main-school-photo {
+    position: absolute;
+
+    left: 5%;
+    top: 8px;
+
+    width: 245px;
+    height: 285px;
+
+    background: #e5ddd5;
+
+    border: 8px solid white;
+
+    box-shadow:
+        0 14px 35px rgba(60,45,35,.12);
+
+    transform: rotate(-3deg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 65px;
+
+    z-index: 2;
+}
+
+.main-school-photo small {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #918983;
+    margin-top: 12px;
+}
+
+.yearbook-sticker {
+    position: absolute;
+
+    right: 4%;
+    top: 35px;
+
+    width: 70px;
+    height: 70px;
+
+    background: #f2dcd8;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+
+    transform: rotate(8deg);
+
+    z-index: 5;
+
+    box-shadow:
+        0 8px 20px rgba(60,45,35,.08);
+
+    animation: float 2.5s ease-in-out infinite;
+}
+
+.yearbook-card {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 250px;
+
+    padding: 20px 22px;
+
+    background: #fffdf9;
+
+    text-align: left;
+
+    box-shadow:
+        0 10px 30px rgba(60,45,35,.08);
+
+    transform: rotate(2deg);
+
+    z-index: 6;
+}
+
+.yearbook-card .year {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #a27a78;
+}
+
+.yearbook-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin: 7px 0;
+}
+
+.yearbook-card p {
+    margin: 0;
+
+    color: #77716c;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+.mini-line {
+    margin-top: 12px;
+
+    font-size: 10px;
+
+    color: #d1a29d;
+
+    letter-spacing: 5px;
+}
+/* HIGH SCHOOL TO COLLEGE */
+
+.transition-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #a27a78;
+    font-weight: 600;
+}
+
+.transition-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 9vw, 55px);
+    line-height: 1.05;
+    margin: 8px 0 18px;
+}
+
+.transition-layout {
+    width: min(90vw, 390px);
+    height: 190px;
+    position: relative;
+}
+
+.transition-photo {
+    position: absolute;
+
+    width: 155px;
+    height: 145px;
+
+    background: #e9e0d8;
+
+    border: 7px solid white;
+
+    box-shadow:
+        0 10px 25px rgba(60,45,35,.10);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 42px;
+}
+
+.transition-photo small {
+    font-size: 8px;
+    color: #918983;
+    letter-spacing: 1px;
+    margin-top: 8px;
+}
+
+.photo-left {
+    left: 8%;
+    top: 8px;
+
+    transform: rotate(-5deg);
+
+    z-index: 2;
+}
+
+.photo-right {
+    right: 8%;
+    top: 25px;
+
+    transform: rotate(5deg);
+
+    z-index: 3;
+}
+
+.arrow-doodle {
+    position: absolute;
+
+    left: 50%;
+    bottom: -5px;
+
+    transform: translateX(-50%);
+
+    font-size: 30px;
+
+    color: #c99491;
+
+    z-index: 5;
+
+    animation: float 2s ease-in-out infinite;
+}
+
+.transition-note {
+    width: min(88vw, 380px);
+
+    background: #fffdf9;
+
+    padding: 17px 20px;
+
+    margin-top: 8px;
+
+    box-shadow:
+        0 8px 25px rgba(60,45,35,.07);
+
+    text-align: left;
+
+    transform: rotate(-1deg);
+}
+
+.transition-note strong {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+}
+
+.transition-note p {
+    color: #77716c;
+    font-size: 11px;
+    line-height: 1.6;
+    margin: 7px 0 0;
+}
+/* COLLEGE COLLAGE */
+
+.college-label {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    color: #a27a78;
+    font-weight: 600;
+}
+
+.college-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 8vw, 50px);
+    margin: 7px 0 15px;
+}
+
+.college-grid {
+    width: min(92vw, 430px);
+    height: 390px;
+    position: relative;
+}
+
+.college-photo {
+    position: absolute;
+
+    background: #e8dfd7;
+
+    border: 7px solid white;
+
+    box-shadow:
+        0 12px 30px rgba(60,45,35,.11);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 50px;
+}
+
+.college-photo small {
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #918983;
+    margin-top: 9px;
+}
+
+.college-main {
+    width: 220px;
+    height: 250px;
+
+    left: 2%;
+    top: 0;
+
+    transform: rotate(-4deg);
+
+    z-index: 2;
+}
+
+.college-small {
+    width: 155px;
+    height: 165px;
+
+    right: 1%;
+    top: 35px;
+
+    transform: rotate(6deg);
+
+    z-index: 3;
+}
+
+.college-note {
+    position: absolute;
+
+    left: 17%;
+    bottom: 0;
+
+    width: 285px;
+
+    background: #fffdf9;
+
+    padding: 16px 19px;
+
+    text-align: left;
+
+    box-shadow:
+        0 10px 25px rgba(60,45,35,.08);
+
+    transform: rotate(1deg);
+
+    z-index: 5;
+}
+
+.college-note span {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    color: #a27a78;
+}
+
+.college-note h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    margin: 6px 0;
+}
+
+.college-note p {
+    margin: 0;
+
+    color: #77716c;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+.college-doodle {
+    position: absolute;
+
+    right: 7%;
+    bottom: 30px;
+
+    font-size: 38px;
+
+    z-index: 8;
+
+    animation: float 2.5s ease-in-out infinite;
+}
+
+  /* ACHIEVER PAGE */
+
+.achievement-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #a27a78;
+    font-weight: 600;
+}
+
+.achievement-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 9vw, 55px);
+    margin: 6px 0;
+}
+
+.achievement-subtitle {
+    color: #77716c;
+    font-size: 13px;
+    margin: 0 0 20px;
+}
+
+.achievement-layout {
+    width: min(92vw, 410px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    position: relative;
+}
+
+.achievement-photo {
+    width: 190px;
+    height: 215px;
+
+    background: #e8dfd7;
+
+    border: 8px solid white;
+
+    box-shadow:
+        0 12px 30px rgba(60,45,35,.10);
+
+    transform: rotate(-4deg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 55px;
+}
+
+.achievement-photo small {
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #918983;
+    margin-top: 12px;
+}
+
+.achievement-icon {
+    animation: float 2.5s ease-in-out infinite;
+}
+
+.achievement-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 150px;
+}
+
+.stat-card {
+    background: white;
+
+    padding: 14px 12px;
+
+    text-align: left;
+
+    box-shadow:
+        0 7px 20px rgba(60,45,35,.07);
+
+    border-radius: 8px;
+}
+
+.stat-card span {
+    display: block;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    color: #a27a78;
+
+    margin-bottom: 5px;
+}
+
+.stat-card strong {
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.achievement-note {
+    width: min(88vw, 390px);
+
+    margin-top: 18px;
+
+    padding: 14px 18px;
+
+    background: #fffdf9;
+
+    box-shadow:
+        0 7px 20px rgba(60,45,35,.06);
+
+    transform: rotate(1deg);
+}
+
+.achievement-note p {
+    color: #77716c;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+
+    margin: 0;
+}
+
+.achievement-note b {
+    color: #292725;
+}
+
+  /* ACHIEVEMENT JOURNEY */
+
+.honors-layout {
+    width: min(85vw, 850px);
+    height: 280px;
+    position: relative;
+    margin: 0 auto;
+}
+  
+.honors-photo {
+    position: absolute;
+
+    left: 8%;
+    top: 5px;
+
+    width: 210px;
+    height: 255px;
+
+    background: #e8dfd7;
+    border: 8px solid white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 60px;
+
+    transform: rotate(-5deg);
+
+    box-shadow: 0 12px 30px rgba(60,45,35,.12);
+
+    z-index: 2;
+}
+
+.honors-photo small,
+.license-photo small,
+.lpt-photo small,
+.teacher-photo small,
+.masters-photo small {
+    font-size: 8px;
+    letter-spacing: 1px;
+    color: #918983;
+    margin-top: 10px;
+}
+
+.honors-paper {
+    position: absolute;
+
+    right: 8%;
+    top: 15px;
+
+    width: 390px;
+
+    padding: 20px;
+
+    background: #fffdf9;
+
+    text-align: left;
+
+    transform: rotate(2deg);
+
+    box-shadow: 0 10px 28px rgba(60,45,35,.09);
+
+    z-index: 5;
+  }
+
+.honors-top {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #a27a78;
+}
+
+.honors-paper h1 {
+    font-size: 34px;
+    line-height: 1;
+    margin: 8px 0;
+}
+
+.honors-paper p {
+    color: #77716c;
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+.honors-line {
+    color: #d0aaa5;
+    letter-spacing: 3px;
+}
+
+.honors-paper strong {
+    font-size: 11px;
+}
+
+.honors-sticker {
+    position: absolute;
+    right: 7%;
+    top: 5px;
+
+    font-size: 42px;
+
+    z-index: 8;
+
+    animation: float 2.5s ease-in-out infinite;
+}
+
+.honors-small {
+    position: absolute;
+    left: 0;
+    bottom: 65px;
+
+    color: #d0aaa5;
+    font-size: 20px;
+    z-index: 8;
+}
+
+
+/* REE */
+
+.license-layout {
+    width: min(92vw, 420px);
+    height: 370px;
+    position: relative;
+}
+
+.license-photo {
+    position: absolute;
+
+    left: 5%;
+    top: 10px;
+
+    width: 220px;
+    height: 275px;
+
+    background: #e7dfd8;
+    border: 8px solid white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 65px;
+
+    transform: rotate(-4deg);
+
+    box-shadow: 0 13px 30px rgba(60,45,35,.1);
+}
+
+.license-card {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 245px;
+
+    background: #fffdf9;
+
+    padding: 20px;
+
+    text-align: left;
+
+    box-shadow: 0 9px 25px rgba(60,45,35,.08);
+
+    transform: rotate(2deg);
+
+    z-index: 5;
+}
+
+.license-card span,
+.lpt-note span,
+.teacher-note span,
+.masters-note span {
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: #a27a78;
+}
+
+.license-card h1 {
+    font-size: 45px;
+    margin: 5px 0;
+}
+
+.license-card p {
+    color: #77716c;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.license-stamp {
+    display: inline-block;
+
+    padding: 5px 8px;
+
+    border: 1px solid #c99491;
+
+    color: #a27a78;
+
+    font-size: 8px;
+    letter-spacing: 1px;
+
+    transform: rotate(-4deg);
+}
+
+.license-doodle {
+    position: absolute;
+
+    right: 7%;
+    top: 15px;
+
+    font-size: 40px;
+
+    z-index: 8;
+
+    animation: float 2.5s ease-in-out infinite;
+}
+
+
+/* LPT */
+
+.lpt-layout {
+    width: min(85vw, 850px);
+    height: 270px;
+
+    position: relative;
+
+    margin: 0 auto;
+}
+
+.lpt-photo {
+    position: absolute;
+
+    left: 50%;
+    top: 5px;
+
+    width: 220px;
+    height: 270px;
+
+    background: #e8dfd7;
+    border: 8px solid white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 65px;
+
+    transform: rotate(5deg);
+
+    box-shadow: 0 13px 30px rgba(60,45,35,.1);
+}
+
+.lpt-note {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 270px;
+
+    background: #fffdf9;
+
+    padding: 20px;
+
+    text-align: left;
+
+    box-shadow: 0 9px 25px rgba(60,45,35,.08);
+
+    transform: rotate(-2deg);
+
+    z-index: 5;
+}
+
+.lpt-note h1 {
+    font-size: 48px;
+    margin: 5px 0;
+}
+
+.lpt-note p {
+    color: #77716c;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.lpt-note strong {
+    font-size: 11px;
+}
+
+.tiny-star {
+    color: #c99491;
+    font-size: 12px;
+}
+
+
+/* TEACHER */
+
+.teacher-layout {
+    width: min(92vw, 430px);
+    height: 390px;
+    position: relative;
+    margin: 40px auto 0;
+}
+
+.teacher-main {
+    position: absolute;
+
+    left: 3%;
+    top: 5px;
+
+    width: 230px;
+    height: 280px;
+
+    background: #e8dfd7;
+    border: 8px solid white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 65px;
+
+    transform: rotate(-4deg);
+
+    box-shadow: 0 13px 30px rgba(60,45,35,.1);
+
+    z-index: 2;
+}
+
+.teacher-note {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 275px;
+
+    background: #fffdf9;
+
+    padding: 19px;
+
+    text-align: left;
+
+    transform: rotate(2deg);
+
+    box-shadow: 0 9px 25px rgba(60,45,35,.08);
+
+    z-index: 5;
+}
+
+.teacher-note h1 {
+    font-size: 28px;
+    line-height: 1.1;
+    margin: 6px 0;
+}
+
+.teacher-note p {
+    color: #77716c;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.teacher-note strong {
+    font-size: 11px;
+}
+
+.teacher-sticker {
+    position: absolute;
+
+    right: 5%;
+    top: 10px;
+
+    font-size: 38px;
+
+    z-index: 8;
+
+    animation: float 2.5s ease-in-out infinite;
+}
+
+
+/* MASTERS */
+
+.masters-layout {
+    width: min(92vw, 420px);
+    height: 375px;
+    position: relative;
+}
+
+.masters-photo {
+    position: absolute;
+
+    left: 5%;
+    top: 10px;
+
+    width: 205px;
+    height: 255px;
+
+    background: #e8dfd7;
+    border: 8px solid white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 60px;
+
+    transform: rotate(-5deg);
+
+    box-shadow: 0 12px 30px rgba(60,45,35,.1);
+}
+
+.masters-note {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 270px;
+
+    background: #fffdf9;
+
+    padding: 20px;
+
+    text-align: left;
+
+    transform: rotate(2deg);
+
+    box-shadow: 0 9px 25px rgba(60,45,35,.08);
+
+    z-index: 5;
+}
+
+.masters-note h1 {
+    font-size: 30px;
+    margin: 6px 0;
+}
+
+.masters-note p {
+    color: #77716c;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.masters-quote {
+    margin-top: 10px;
+
+    color: #a27a78;
+
+    font-size: 10px;
+
+    font-style: italic;
+}
+
+.masters-doodle {
+    position: absolute;
+
+    right: 5%;
+    top: 5px;
+
+    font-size: 40px;
+
+    z-index: 8;
+
+    animation: float 2.5s ease-in-out infinite;
+}
+
+
+/* OUR STORY */
+
+.our-story-character {
+    font-size: 58px;
+
+    margin-bottom: 15px;
+
+    animation: float 2.5s ease-in-out infinite;
+}
+/* MINI QUIZ */
+
+.mini-quiz {
+    width: min(75vw, 650px);
+
+    margin: 5px auto 0;
+
+    padding: 12px 18px;
+
+    background: #fffdf9;
+
+    box-shadow:
+        0 6px 20px rgba(60,45,35,.07);
+
+    border-radius: 12px;
+}
+
+.quiz-label {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #a27a78;
+
+    margin-bottom: 8px;
+}
+
+.mini-quiz h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 19px;
+
+    margin: 5px 0 8px;
+}
+
+.mini-quiz p {
+    font-size: 11px;
+
+    color: #77716c;
+
+    line-height: 1.5;
+}
+
+.quiz-options {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+.quiz-options button {
+    border: 1px solid #e3d5cf;
+
+    background: #faf6f2;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.quiz-options button:hover {
+    transform: translateY(-2px);
+}
+
+.quiz-result {
+    min-height: 18px;
+
+    margin-top: 12px !important;
+
+    font-size: 11px !important;
+
+    font-weight: 600;
+}
+
+.quiz-result.correct {
+    color: #7d9a7b;
+}
+
+.quiz-result.wrong {
+    color: #b77c78;
+}
+
+  /* LICENSE VERIFICATION */
+
+.license-check {
+    width: min(90vw, 380px);
+
+    margin-top: 18px;
+
+    padding: 20px;
+
+    background: #fffdf9;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 28px rgba(60,45,35,.08);
+}
+
+.check-label {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    color: #a27a78;
+
+    margin-bottom: 8px;
+}
+
+.license-check h2 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 21px;
+
+    margin: 5px 0 8px;
+}
+
+.license-check p {
+    color: #77716c;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+
+    min-height: 35px;
+}
+
+#verifyButton {
+    transition: .2s;
+}
+
+#verifyButton.checking {
+    opacity: .7;
+
+    transform: scale(.96);
+}
+.lpt-quiz {
+    width: min(75vw, 650px);
+
+    margin: 0 auto;
+
+    padding: 12px 18px;
+
+    background: #fffdf9;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 6px 20px rgba(60,45,35,.07);
+}
+
+.lpt-quiz h3 {
+    font-family: 'Playfair Display', serif;
+
+    font-size: 18px;
+
+    margin: 5px 0;
+}
+
+.lpt-quiz p {
+    font-size: 11px;
+
+    color: #77716c;
+}
+
+.lpt-options {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+.lpt-options button {
+    border: 1px solid #e3d5cf;
+
+    background: #faf6f2;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    cursor: pointer;
+}
+
+  .teacher-interaction {
+    width: min(75vw, 650px);
+    margin: 15px auto 0;
+    padding: 15px 20px;
+    background: #fffdf9;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(60,45,35,.07);
+}
+
+.teacher-question {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.teacher-options {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.teacher-options button {
+    border: 1px solid #e3d5cf;
+    background: #faf6f2;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+#teacherResult {
+    font-size: 11px;
+    min-height: 20px;
+}
+.masters-unlock {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.masters-question {
+    font-size: 11px;
+    color: #77716c;
+    margin-bottom: 10px;
+}
+
+.masters-unlock button {
+    cursor: pointer;
+}
+
+  .before-title {
+    text-align: left;
+    width: min(80vw, 700px);
+    margin: 0 auto 15px;
+  }
+
+.before-title span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.before-title h1 {
+    margin: 5px 0;
+    font-size: 38px;
+}
+
+.before-title p {
+    margin: 4px 0;
+}
+
+.memory-board {
+    position: relative;
+    width: min(85vw, 750px);
+    height: 240px;
+    margin: 10px auto 20px;
+}
+
+.memory-photo {
+    position: absolute;
+    width: 180px;
+    height: 150px;
+
+    background: #fffdf9;
+    border: 7px solid white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 45px;
+
+    box-shadow: 0 8px 22px rgba(60,45,35,.12);
+}
+
+.memory-photo small {
+    font-size: 9px;
+    margin-top: 8px;
+}
+
+.photo-left {
+    left: 5%;
+    top: 20px;
+    transform: rotate(-7deg);
+}
+
+.photo-right {
+    right: 5%;
+    top: 5px;
+    transform: rotate(6deg);
+}
+
+.photo-center {
+    left: 50%;
+    top: 55px;
+    transform: translateX(-50%) rotate(-2deg);
+    z-index: 2;
+}
+
+.before-note {
+    width: min(75vw, 600px);
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.6;
+}
+  
+  
+@media(max-width:500px) {
+
+    .buttons {
+        flex-direction: column-reverse;
+    }
+
+    .yes,
+    .no {
+        width: 190px;
+    }
+
+}
+
+  /* ================= OUR MEMORIES ================= */
+
+.memories-content {
+    width: min(92vw, 430px);
+    margin: 25px auto 0;
+    text-align: center;
+}
+
+.memories-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: .65;
+}
+
+.memories-content h1 {
+    margin: 8px 0;
+    font-size: 38px;
+}
+
+.memories-subtitle {
+    margin: 0 auto 22px;
+    max-width: 320px;
+    line-height: 1.5;
+    opacity: .75;
+}
+
+.memory-gallery {
+    position: relative;
+    width: 100%;
+    height: 230px;
+    margin: 5px auto 15px;
+}
+
+.couple-photo {
+    position: absolute;
+    width: 125px;
+    height: 155px;
+    background: #e8dfd7;
+    border: 7px solid white;
+    box-shadow: 0 10px 25px rgba(60,45,35,.12);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 38px;
+}
+
+.couple-photo small {
+    margin-top: 8px;
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.photo-one {
+    left: 0;
+    top: 25px;
+    transform: rotate(-7deg);
+}
+
+.photo-two {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%) rotate(2deg);
+    z-index: 2;
+}
+
+.photo-three {
+    right: 0;
+    top: 25px;
+    transform: rotate(7deg);
+}
+
+.memory-caption {
+    max-width: 340px;
+    margin: 5px auto 18px;
+    line-height: 1.5;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- OPENING -->
+
+<div class="screen" id="opening">
+
+    <div class="sparkle s1">✦</div>
+    <div class="sparkle s2">✧</div>
+    <div class="sparkle s3">✦</div>
+    <div class="sparkle s4">✧</div>
+
+    <div class="flower f1">♡</div>
+    <div class="flower f2">✿</div>
+
+    <div class="opening-icon">
+        🎂
+    </div>
+
+    <h1 class="opening-title">
+        Happy Birthday,<br>
+        Byyy!
+    </h1>
+
+    <p class="subtitle">
+        Would you like to see my gift for you?
+    </p>
+
+    <div class="buttons">
+
+        <button
+            class="no"
+            id="noBtn"
+            onclick="noThanks()">
+            No, thanks
+        </button>
+
+        <button
+            class="yes"
+            id="yesBtn"
+            onclick="yesPlease()">
+            Yes, please!
+        </button>
+
+    </div>
+
+    <div
+        class="message"
+        id="message">
+    </div>
+
+</div>
+
+
+<!-- SAD SCREEN -->
+
+<div
+    class="screen hidden"
+    id="sadScreen">
+
+    <div class="character">
+        🥺
+    </div>
+
+    <h1 class="sad-title">
+        Aw, please?
+    </h1>
+
+    <p class="subtitle">
+        I prepared this gift for you. 😭
+    </p>
+
+    <button
+        class="back"
+        onclick="goBack()">
+        ← Go back
+    </button>
+
+</div>
+
+
+<!-- CHAPTER INTRO -->
+
+<div
+    class="screen hidden"
+    id="chapterIntro">
+
+    <div class="character">
+        📖
+    </div>
+
+    <div class="chapter-number">
+        A LITTLE REWIND
+    </div>
+
+    <h1 class="intro-title">
+        A birthday, in chapters<br>
+        for Anthon at twenty-seven
+    </h1>
+
+    <p class="subtitle">
+        Let's have a quick rewind.
+    </p>
+
+    <button
+        class="arrow-button"
+        onclick="openChapterOne()">
+        →
+    </button>
+
+</div>
+
+
+<!-- CHAPTER 01 -->
+
+<div
+    class="chapter-screen hidden"
+    id="chapterOne">
+
+    <div class="chapter-header">
+        <span>01 / 06</span>
+        <span>BEFORE WE MET</span>
+    </div>
+
+    <div class="character">
+        🧸
+    </div>
+
+    <div class="chapter-number">
+        CHAPTER ONE
+    </div>
+
+    <h1 class="photo-title">
+        Before we met.
+    </h1>
+
+    <p class="photo-text">
+
+        Before I knew you, there was already
+        a whole story being written.
+
+        And we're going all the way back
+        to the very beginning.
+
+    </p>
+
+    <button
+        class="yes"
+        style="margin-top:25px;"
+        onclick="openPassword()">
+
+        Start the rewind →
+
+    </button>
+
+</div>
+
+
+<!-- PASSWORD -->
+
+<div
+    class="chapter-screen hidden"
+    id="passwordScreen">
+
+    <div class="character">
+        🔐
+    </div>
+
+    <div class="chapter-number">
+        BEFORE WE MET
+    </div>
+
+    <h1 class="photo-title">
+        One little test.
+    </h1>
+
+    <p class="photo-text">
+
+        Before we continue...
+
+        prove that you're actually
+        Anthon.
+
+    </p>
+
+    <input
+        class="password-input"
+        id="passwordInput"
+        type="number"
+        placeholder="YYYY">
+
+    <button
+        class="yes"
+        style="margin-top:15px;"
+        onclick="checkPassword()">
+
+        Unlock
+
+    </button>
+
+    <p
+        class="message"
+        id="passwordMessage">
+    </p>
+
+</div>
+
+
+<!-- BABY -->
+
+<div class="chapter-screen hidden" id="babyScreen">
+
+    <div class="chapter-header">
+        <span>01 / 06</span>
+        <span>BEFORE WE MET</span>
+    </div>
+
+    <div class="scrapbook-top">
+        <span>SEPTEMBER 18, 1999</span>
+        <span>♡</span>
+    </div>
+
+    <h1 class="scrapbook-title">
+        Once upon a time...
+    </h1>
+
+    <div class="baby-layout">
+
+        <div class="tape">✦</div>
+
+        <div class="big-photo">
+            <div>👶</div>
+            <small>baby photo 01</small>
+        </div>
+
+        <div class="small-photo">
+            <div>🍼</div>
+            <small>baby photo 02</small>
+        </div>
+
+        <div class="cute-note">
+
+            <div class="note-character">
+                🧸
+            </div>
+
+            <strong>
+                Little Anthon.
+            </strong>
+
+            <p>
+                The story started here.
+                A tiny baby who obviously
+                had no idea he'd grow up to
+                become an engineer, teacher,
+                licensed professional, and
+                eventually... someone's favorite
+                person. 😂
+            </p>
+
+        </div>
+
+    </div>
+
+    <button
+        class="next"
+        onclick="showChildhoodOne()">
+
+        turn the page → 
+
+    </button>
+
+</div>
+
+<!-- CHILDHOOD ONE -->
+
+<div
+    class="chapter-screen hidden"
+    id="childhoodOne">
+
+    <div class="chapter-header">
+        <span>01 / 06</span>
+        <span>BEFORE WE MET</span>
+    </div>
+
+    <div class="scrapbook-top">
+        <span>GROWING UP</span>
+        <span>✦</span>
+    </div>
+
+    <h1 class="scrapbook-title">
+        A little older...
+    </h1>
+
+    <div class="childhood-layout">
+
+        <div class="child-photo photo-one">
+            🧒
+            <small>childhood 01</small>
+        </div>
+
+        <div class="child-photo photo-two">
+            🧸
+            <small>childhood 02</small>
+        </div>
+
+        <div class="child-note">
+
+            <div class="note-character">
+                ✿
+            </div>
+
+            <strong>
+                Growing up.
+            </strong>
+
+            <p>
+                Somewhere between these
+                years, little Anthon slowly
+                became the person everyone
+                knows today.
+
+                And yes, we're keeping the
+                evidence because apparently
+                you were cute. 😂
+            </p>
+
+        </div>
+
+    </div>
+
+    <button
+        class="next"
+        onclick="showChildhoodTwo()">
+
+        turn the page →
+
+    </button>
+
+</div>
+
+
+<!-- CHILDHOOD TWO -->
+
+<div
+    class="chapter-screen hidden"
+    id="childhoodTwo">
+
+    <div class="chapter-header">
+        <span>01 / 06</span>
+        <span>BEFORE WE MET</span>
+    </div>
+
+    <div class="character small">
+        🧸 ✦
+    </div>
+
+    <div class="photo-card">
+
+        <div class="photo-placeholder">
+            🧒
+        </div>
+
+    </div>
+
+    <div class="photo-date">
+        ANOTHER LITTLE MEMORY
+    </div>
+
+    <h1 class="photo-title">
+        Still growing.
+    </h1>
+
+    <p class="photo-text">
+
+        A little older, a little wiser...
+
+        Or at least that's what we're
+        assuming.
+
+        We don't actually have the
+        childhood interviews, so we'll
+        let the photos do the talking.
+
+        😂
+
+    </p>
+
+    <button
+        class="next"
+        onclick="showHighSchoolOne()">
+
+        Keep going →
+
+    </button>
+
+</div>
+
+
+<!-- HIGH SCHOOL ONE -->
+
+<div
+    class="chapter-screen hidden"
+    id="highSchoolOne">
+
+    <div class="chapter-header">
+        <span>01 / 06</span>
+        <span>BEFORE WE MET</span>
+    </div>
+
+    <div class="school-label">
+        MUZON HIGH SCHOOL
+    </div>
+
+    <h1 class="yearbook-title">
+        The school years.
+    </h1>
+
+    <div class="yearbook-layout">
+
+        <div class="yearbook-photo main-school-photo">
+            🎒
+            <small>HIGH SCHOOL PHOTO</small>
+        </div>
+
+        <div class="yearbook-sticker">
+            📚
+        </div>
+
+        <div class="yearbook-card">
+
+            <span class="year">
+                CHAPTER 02
+            </span>
+
+            <h2>
+                Student Anthon
+            </h2>
+
+            <p>
+                Before the degrees, licenses,
+                and everything else that came
+                later, there was a student
+                figuring things out one school
+                day at a time.
+            </p>
+
+            <div class="mini-line">
+                ✦ ✦ ✦
+            </div>
+
+        </div>
+
+    </div>
+
+    <button
+        class="next"
+        onclick="showHighSchoolTwo()">
+
+        next school memory →
+
+    </button>
+
+</div>
+
+<!-- HIGH SCHOOL TWO -->
+
+<div
+    class="chapter-screen hidden"
+    id="highSchoolTwo">
+
+    <div class="chapter-header">
+        <span>01 / 06</span>
+        <span>BEFORE WE MET</span>
+    </div>
+
+    <div class="transition-label">
+        ONE CHAPTER ENDS
+    </div>
+
+    <h1 class="transition-title">
+        And then...<br>
+        college.
+    </h1>
+
+    <div class="transition-layout">
+
+        <div class="transition-photo photo-left">
+            📚
+            <small>HS MEMORY</small>
+        </div>
+
+        <div class="transition-photo photo-right">
+            🎒
+            <small>ONE LAST LOOK</small>
+        </div>
+
+        <div class="arrow-doodle">
+            ↓
+        </div>
+
+    </div>
+
+    <div class="transition-note">
+
+        <strong>
+            Next stop: Bulacan State University.
+        </strong>
+
+        <p>
+            The next chapter brought him to
+            BS Electrical Engineering.
+
+            More studying, more exams,
+            more sleepless nights...
+
+            and somewhere along the way,
+            something else was waiting.
+        </p>
+
+    </div>
+
+    <button
+        class="yes"
+        style="margin-top:20px;"
+        onclick="showCollegeOne()">
+
+        enter college →
+
+    </button>
+
+</div>
+
+<!-- COLLEGE ONE -->
+
+<div
+    class="chapter-screen hidden"
+    id="collegeOne">
+
+    <div class="chapter-header">
+        <span>01 / 06</span>
+        <span>BEFORE WE MET</span>
+    </div>
+
+    <div class="college-label">
+        BULACAN STATE UNIVERSITY ✦
+    </div>
+
+    <h1 class="college-title">
+        The college years.
+    </h1>
+
+    <div class="college-grid">
+
+        <div class="college-photo college-main">
+            🎓
+            <small>COLLEGE PHOTO 01</small>
+        </div>
+
+        <div class="college-photo college-small">
+            📚
+            <small>COLLEGE PHOTO 02</small>
+        </div>
+
+        <div class="college-note">
+
+            <span>
+                BS ELECTRICAL ENGINEERING
+            </span>
+
+            <h2>
+                Here it started.
+            </h2>
+
+            <p>
+                Years of lectures, projects,
+                exams, requirements, and
+                probably a questionable amount
+                of coffee.
+
+                But this chapter was building
+                something bigger than a degree.
+            </p>
+
+        </div>
+
+        <div class="college-doodle">
+            ⚡
+        </div>
+
+    </div>
+
+    <button
+        class="next"
+        onclick="showCollegeTwo()">
+
+        keep going →
+
+    </button>
+
+</div>
+  
+<!-- COLLEGE TWO -->
+
+<div
+    class="chapter-screen hidden"
+    id="collegeTwo">
+
+    <div class="chapter-header">
+        <span>01 / 06</span>
+        <span>THE ACHIEVER</span>
+    </div>
+
+    <div class="achievement-label">
+        ACHIEVEMENT UNLOCKED ✦
+    </div>
+
+    <h1 class="achievement-title">
+        Okay, smart.
+    </h1>
+
+    <p class="achievement-subtitle">
+        Apparently, college wasn't just
+        about surviving.
+    </p>
+
+    <div class="achievement-layout">
+
+        <div class="achievement-photo">
+
+            <div class="achievement-icon">
+                🏆
+            </div>
+
+            <small>
+                HIGHEST HONORS PHOTO
+            </small>
+
+        </div>
+
+        <div class="achievement-stats">
+
+            <div class="stat-card">
+
+                <span>
+                    DEGREE
+                </span>
+
+                <strong>
+                    BS ELECTRICAL<br>
+                    ENGINEERING
+                </strong>
+
+            </div>
+
+            <div class="stat-card">
+
+                <span>
+                    FINAL RESULT
+                </span>
+
+                <strong>
+                    HIGHEST<br>
+                    HONORS
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="achievement-note">
+
+        <p>
+            You worked for this.
+
+            All those exams, requirements,
+            deadlines, and late nights
+            eventually became one really
+            impressive achievement.
+
+            And honestly?
+
+            <b>
+                I'm really proud of you.
+            </b>
+        </p>
+
+    </div>
+
+    <button
+        class="yes"
+        style="margin-top:18px;"
+        onclick="showHonors()">
+
+        there's more →
+
+    </button>
+
+</div>
+
+<!-- HIGHEST HONORS -->
+<div
+    class="chapter-screen hidden"
+    id="honorsScreen">
+
+    <div class="chapter-header">
+        <span>01 / 06</span>
+        <span>ACHIEVEMENT UNLOCKED</span>
+    </div>
+
+    <div class="honors-layout">
+
+        <div class="honors-small">
+            ✦
+        </div>
+
+        <div class="honors-photo">
+            🏆
+            <small>HIGHEST HONORS PHOTO</small>
+        </div>
+
+        <div class="honors-sticker">
+            ⭐
+        </div>
+
+        <div class="honors-paper">
+
+            <div class="honors-top">
+                ACADEMIC ACHIEVEMENT
+            </div>
+
+            <h1>
+                HIGHEST<br>
+                HONORS
+            </h1>
+
+            <p>
+                Okay, let's actually take a
+                moment for this one.
+            </p>
+
+            <p>
+                You didn't just finish college.
+                You finished it with one of the
+                highest honors.
+            </p>
+
+            <div class="honors-line">
+                ─────────
+            </div>
+
+            <strong>
+                Proud of you, smart boy. 🤍
+            </strong>
+
+        </div>
+
+    </div>
+
+    <div class="mini-quiz">
+
+    <div class="quiz-label">
+        ✦ QUICK QUIZ ✦
+    </div>
+
+    <h3>
+        Okay, let's see if<br>
+        you were paying attention. 👀
+    </h3>
+
+    <p>
+        What was Anthon's college course?
+    </p>
+
+    <div class="quiz-options">
+
+        <button onclick="answerQuiz(false)">
+            A. BS Nursing
+        </button>
+
+        <button onclick="answerQuiz(true)">
+            B. BS Electrical Engineering
+        </button>
+
+        <button onclick="answerQuiz(false)">
+            C. BS Accountancy
+        </button>
+
+    </div>
+
+    <div
+        id="quizResult"
+        class="quiz-result">
+    </div>
+
+    <button
+        id="unlockButton"
+        class="yes hidden"
+        style="margin-top:12px;"
+        onclick="showRee()">
+
+        UNLOCK NEXT →
+    </button>
+
+    </div>
+
+    <p
+        id="quizResult"
+        class="quiz-result">
+    </p>
+
+    <button
+        id="unlockButton"
+        class="yes hidden"
+        style="margin-top:12px;"
+        onclick="showRee()">
+
+        UNLOCK NEXT →
+    </button>
+
+    </div>
+
+</div>
+
+
+<!-- REE -->
+
+<div
+    class="chapter-screen hidden"
+    id="reeScreen">
+
+    <div class="chapter-header">
+        <span>02 / 06</span>
+        <span>LICENSED</span>
+    </div>
+
+    <div class="license-layout">
+
+        <div class="license-doodle">
+            ⚡
+        </div>
+
+        <div class="license-photo">
+            ⚡
+            <small>REE PHOTO</small>
+        </div>
+
+        <div class="license-card">
+
+            <span>
+                2022
+            </span>
+
+            <h1>
+                REE
+            </h1>
+
+            <p>
+                Another milestone unlocked.
+
+                From electrical engineering
+                student to Registered Electrical
+                Engineer.
+            </p>
+
+            <div class="license-stamp">
+                LICENSED ✓
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="license-check">
+
+    <div class="check-label">
+        ⚡ LICENSE VERIFICATION
+    </div>
+
+    <h2>
+        Ready to verify this achievement?
+    </h2>
+
+    <p id="licenseStatus">
+        Tap the button. Let's check if
+        Engineer Anthon is officially licensed.
+    </p>
+
+    <button
+        class="yes"
+        id="verifyButton"
+        onclick="verifyLicense()">
+
+        TAP TO VERIFY ⚡
+
+    </button>
+
+    <button
+        class="next hidden"
+        id="continueLicense"
+        onclick="showLpt()">
+
+        LICENSE VERIFIED → 
+
+    </button>
+
+    </div>
+
+</div>
+
+
+<!-- LPT -->
+
+<div
+    class="chapter-screen hidden"
+    id="lptScreen">
+
+    <div class="chapter-header">
+        <span>03 / 06</span>
+        <span>ANOTHER LICENSE</span>
+    </div>
+
+    <div class="lpt-layout">
+
+        <div class="lpt-photo">
+            🍎
+            <small>LPT PHOTO</small>
+        </div>
+
+        <div class="lpt-note">
+
+            <div class="tiny-star">
+                ✦ ✦
+            </div>
+
+            <span>
+                2023
+            </span>
+
+            <h1>
+                LPT
+            </h1>
+
+            <p>
+                Because apparently one license
+                wasn't enough.
+
+                You went and became a Licensed
+                Professional Teacher too.
+            </p>
+
+            <strong>
+                Overachiever behavior. 😂
+            </strong>
+
+        </div>
+
+    </div>
+
+    <div class="lpt-quiz">
+
+    <div class="quiz-label">
+        ✦ QUICK EXAM ✦
+    </div>
+
+    <h3>
+        One last test before<br>
+        we give you the title. 🎓
+    </h3>
+
+    <p>
+        What does <strong>LPT</strong> stand for?
+    </p>
+
+    <div class="lpt-options">
+
+        <button onclick="lptAnswer(false)">
+            A. Legit Pogi Teacher 😂
+        </button>
+
+        <button onclick="lptAnswer(true)">
+            B. Licensed Professional Teacher
+        </button>
+
+        <button onclick="lptAnswer(false)">
+            C. Lagi Pang Tulog 😴
+        </button>
+
+    </div>
+
+    <p
+        id="lptResult"
+        class="quiz-result">
+    </p>
+
+    <button
+    id="lptContinue"
+    class="yes"
+    style="margin-top:12px; position:relative; z-index:20;"
+    onclick="showTeacher()">
+
+    LICENSE UNLOCKED → 🎓
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- TEACHER -->
+
+<div
+    class="chapter-screen hidden"
+    id="teacherScreen">
+
+    <div class="chapter-header">
+        <span>04 / 06</span>
+        <span>THE TEACHER</span>
+    </div>
+
+    <div class="teacher-layout">
+
+        <div class="teacher-photo teacher-main">
+            👨‍🏫
+            <small>TEACHER PHOTO</small>
+        </div>
+
+        <div class="teacher-sticker">
+            📚
+        </div>
+
+        <div class="teacher-note">
+
+            <span>
+                3 YEARS & COUNTING
+            </span>
+
+            <h1>
+                Then you<br>
+                became a teacher.
+            </h1>
+
+            <p>
+                From being a student who spent
+                years studying, you eventually
+                became the person standing in
+                front of the classroom.
+
+                Three years in DepEd later,
+                you're still doing it.
+            </p>
+
+            <strong>
+                And that's something
+                worth celebrating. 🤍
+            </strong>
+
+        </div>
+
+    </div>
+
+    <button
+        class="next"
+        onclick="showMasters()">
+
+        one last achievement →
+
+    </button>
+
+</div>
+
+        
+
+
+<!-- MASTERS -->
+
+<div
+    class="chapter-screen hidden"
+    id="mastersScreen">
+
+    <div class="chapter-header">
+        <span>05 / 06</span>
+        <span>STILL LEARNING</span>
+    </div>
+
+    <div class="masters-layout">
+
+        <div class="masters-doodle">
+            🎓
+        </div>
+
+        <div class="masters-photo">
+            📖
+            <small>MASTER'S PHOTO</small>
+        </div>
+
+        <div class="masters-note">
+
+            <span>
+                CURRENT CHAPTER
+            </span>
+
+            <h1>
+                Still not done.
+            </h1>
+
+            <p>
+                Even after everything you've
+                already accomplished, you're
+                still studying.
+
+                Now working toward your
+                <b>
+                    MS in Electrical Engineering.
+                </b>
+            </p>
+
+            <div class="masters-quote">
+                "Apparently, resting is optional."
+                😂
+            </div>
+
+        </div>
+
+    </div>
+
+<div class="masters-unlock">
+
+    <p class="masters-question">
+        You've unlocked 5 chapters already... 👀
+    </p>
+
+    <button
+    class="yes"
+    onclick="showOurStory()">
+
+    unlock the last chapter →
+
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- OUR STORY -->
+
+<div
+    class="chapter-screen hidden"
+    id="ourStoryScreen">
+
+    <div class="chapter-header">
+        <span>06 / 06</span>
+        <span>AND THEN...</span>
+    </div>
+
+    <div class="our-story-character">
+        👀
+    </div>
+
+    <div class="chapter-number">
+        SOMEWHERE IN THE COLLEGE YEARS
+    </div>
+
+    <h1 class="intro-title">
+        I met you.
+    </h1>
+
+    <p class="subtitle">
+        And that deserves its own chapter.
+    </p>
+
+    <p class="story-tease">
+        But before we continue...
+        let's rewind a little. ⏪
+    </p>
+
+    <button
+        class="arrow-button"
+        onclick="openOurStory()">
+
+        →
+    </button>
+
+</div>
+<!-- COLLEGE STORY -->
+
+<div
+    class="chapter-screen hidden"
+    id="collegeStoryScreen">
+
+    <div class="chapter-header">
+        <span>COLLEGE DAYS</span>
+        <span>THE BEGINNING</span>
+    </div>
+
+    <div class="college-intro">
+
+    <span>2018 — COLLEGE ERA</span>
+
+    <h1>
+        Before there was us...
+    </h1>
+
+    <p>
+        There was just you,
+        trying to survive college. 😂
+    </p>
+
+    <p>
+        Classes. Requirements.
+        Exams. Sleepless nights.
+        And probably way too much
+        caffeine. ☕
+    </p>
+
+    </div>
+
+    <button
+        class="yes"
+        onclick="showBeforeMe()"
+
+        wait... there's more 👀 →
+
+    </button>
+
+</div>
+
+  <!-- BEFORE ME -->
+
+<div
+    class="chapter-screen hidden"
+    id="beforeMeScreen">
+
+    <div class="chapter-header">
+        <span>BEFORE US</span>
+        <span>THE ANTHON FILES</span>
+    </div>
+
+    <div class="before-title">
+
+        <span>CHAPTER 01</span>
+
+        <h1>
+            Before me...
+        </h1>
+
+        <p>
+            There was Anthon. 👀
+        </p>
+
+    </div>
+
+    <div class="memory-board">
+
+        <div class="memory-photo photo-left">
+            📸
+            <small>CHILDHOOD ANTHON</small>
+        </div>
+
+        <div class="memory-photo photo-right">
+            🎒
+            <small>SCHOOL DAYS</small>
+        </div>
+
+        <div class="memory-photo photo-center">
+            😂
+            <small>QUESTIONABLE ERA</small>
+        </div>
+
+    </div>
+
+    <div class="before-note">
+
+    <p>
+        Before I knew you,
+        you were just this random kid
+        doing your own thing. 😂
+    </p>
+
+    <p>
+        And then somehow...
+        years later, I ended up here,
+        knowing you, annoying you,
+        and celebrating you. 🤍
+    </p>
+
+    </div>
+
+    <button
+    class="yes"
+    onclick="showUs()">
+
+    okay, enough childhood evidence 😂 →
+
+    </button>
+
+</div>
+
+<!-- OUR MEMORIES -->
+
+<div
+    class="chapter-screen hidden"
+    id="usScreen">
+
+    <div class="chapter-header">
+        <span>OUR MEMORIES</span>
+        <span>YOU + ME</span>
+    </div>
+
+    <div class="memories-content">
+
+        <span class="memories-label">
+            THE PART I LIKE BEST
+        </span>
+
+        <h1>
+            Then there was us. 🤍
+        </h1>
+
+        <p class="memories-subtitle">
+            From college days to everything
+            that came after...
+        </p>
+
+        <div class="memory-gallery">
+
+            <div class="couple-photo photo-one">
+                📸
+                <small>COLLEGE US</small>
+            </div>
+
+            <div class="couple-photo photo-two">
+                📸
+                <small>FIRST DATE</small>
+            </div>
+
+            <div class="couple-photo photo-three">
+                📸
+                <small>CEBU 2025</small>
+            </div>
+
+        </div>
+
+        <p class="memory-caption">
+            9 years, countless memories,
+            and somehow... you're still my favorite person. 🥹
+        </p>
+
+        <button
+            class="yes"
+            onclick="showVideoGreets()">
+
+            okay, now for the messages → ❤️
+
+        </button>
+
+    </div>
+
+</div>
+
+    <p class="memory-caption">
+        9 years, countless memories,
+        and somehow... you're still my favorite person. 🥹
+    </p>
+
+    <button
+        class="yes"
+        onclick="showVideoGreets()">
+
+        okay, now for the messages → ❤️
+
+    </button>
+
+</div>
+
+<script>
+
+/* ================= OPENING ================= */
+
+  function showBeforeMe() {
+
+    document.getElementById("collegeStoryScreen").classList.add("hidden");
+
+    document.getElementById("beforeMeScreen").classList.remove("hidden");
+
+  }
+
+let noClicks = 0;
+let yesRunning = false;
+
+const noBtn =
+    document.getElementById("noBtn");
+
+const yesBtn =
+    document.getElementById("yesBtn");
+
+const message =
+    document.getElementById("message");
+
+
+function noThanks() {
+
+    noClicks++;
+
+    if (noClicks === 1) {
+
+        message.innerHTML =
+            "Are you sure? 🥺";
+
+        noBtn.style.transform =
+            "scale(1.12)";
+
+    }
+
+    else if (noClicks === 2) {
+
+        message.innerHTML =
+            "Really? 😭";
+
+        noBtn.style.transform =
+            "scale(1.3)";
+
+    }
+
+    else {
+
+        message.innerHTML =
+            "Wow. Okay. 😭";
+
+        setTimeout(() => {
+
+            document
+                .getElementById("opening")
+                .classList.add("hidden");
+
+            document
+                .getElementById("sadScreen")
+                .classList.remove("hidden");
+
+        }, 600);
+
+    }
+
+}
+
+
+/* ================= BACK ================= */
+
+function goBack() {
+
+    document
+        .getElementById("sadScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("opening")
+        .classList.remove("hidden");
+
+    noClicks = 0;
+
+    noBtn.style.transform =
+        "scale(1)";
+
+    message.innerHTML = "";
+
+}
+
+
+/* ================= YES BUTTON ================= */
+
+function yesPlease() {
+
+    if (yesRunning) return;
+
+    yesRunning = true;
+
+    message.innerHTML =
+        "Wait... 👀";
+
+    yesBtn.classList.add("runaway");
+
+    let startTime =
+        Date.now();
+
+
+    function moveButton() {
+
+        let elapsed =
+            Date.now() - startTime;
+
+
+        if (elapsed < 5000) {
+
+            let maxX =
+                window.innerWidth -
+                yesBtn.offsetWidth -
+                20;
+
+            let maxY =
+                window.innerHeight -
+                yesBtn.offsetHeight -
+                20;
+
+
+            let x =
+                Math.random() *
+                Math.max(maxX, 20);
+
+            let y =
+                Math.random() *
+                Math.max(maxY, 20);
+
+
+            yesBtn.style.left =
+                x + "px";
+
+            yesBtn.style.top =
+                y + "px";
+
+
+            setTimeout(
+                moveButton,
+                500
+            );
+
+        }
+
+        else {
+
+            yesBtn.classList
+                .remove("runaway");
+
+            yesBtn.style.position =
+                "static";
+
+            yesBtn.style.left = "";
+            yesBtn.style.top = "";
+
+            message.innerHTML =
+                "Okay fine. You win. 😂";
+
+            yesRunning = false;
+
+
+            yesBtn.onclick =
+                function() {
+
+                    document
+                        .getElementById("opening")
+                        .classList.add("hidden");
+
+                    document
+                        .getElementById("chapterIntro")
+                        .classList.remove("hidden");
+
+                };
+
+        }
+
+    }
+
+
+    moveButton();
+
+}
+
+
+/* ================= CHAPTER INTRO ================= */
+
+function openChapterOne() {
+
+    document
+        .getElementById("chapterIntro")
+        .classList.add("hidden");
+
+    document
+        .getElementById("chapterOne")
+        .classList.remove("hidden");
+
+}
+
+
+/* ================= PASSWORD ================= */
+
+function openPassword() {
+
+    document
+        .getElementById("chapterOne")
+        .classList.add("hidden");
+
+    document
+        .getElementById("passwordScreen")
+        .classList.remove("hidden");
+
+}
+
+
+function checkPassword() {
+
+    let answer =
+        document
+        .getElementById("passwordInput")
+        .value;
+
+    let result =
+        document
+        .getElementById("passwordMessage");
+
+
+    if (answer === "1999") {
+
+        result.innerHTML =
+            "Correct. 🧠";
+
+        setTimeout(() => {
+
+            document
+                .getElementById("passwordScreen")
+                .classList.add("hidden");
+
+            document
+                .getElementById("babyScreen")
+                .classList.remove("hidden");
+
+        }, 700);
+
+    }
+
+    else {
+
+        result.innerHTML =
+            "Hmm... try again. 😂";
+
+    }
+
+}
+
+
+/* ================= CHAPTER NAVIGATION ================= */
+
+function showChildhoodOne() {
+
+    document
+        .getElementById("babyScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("childhoodOne")
+        .classList.remove("hidden");
+
+}
+
+
+function showChildhoodTwo() {
+
+    document
+        .getElementById("childhoodOne")
+        .classList.add("hidden");
+
+    document
+        .getElementById("childhoodTwo")
+        .classList.remove("hidden");
+
+}
+
+
+function showHighSchoolOne() {
+
+    document
+        .getElementById("childhoodTwo")
+        .classList.add("hidden");
+
+    document
+        .getElementById("highSchoolOne")
+        .classList.remove("hidden");
+
+}
+
+
+function showHighSchoolTwo() {
+
+    document
+        .getElementById("highSchoolOne")
+        .classList.add("hidden");
+
+    document
+        .getElementById("highSchoolTwo")
+        .classList.remove("hidden");
+
+}
+
+
+function showCollegeOne() {
+
+    document
+        .getElementById("highSchoolTwo")
+        .classList.add("hidden");
+
+    document
+        .getElementById("collegeOne")
+        .classList.remove("hidden");
+
+}
+
+
+function showCollegeTwo() {
+
+    document
+        .getElementById("collegeOne")
+        .classList.add("hidden");
+
+    document
+        .getElementById("collegeTwo")
+        .classList.remove("hidden");
+
+}
+
+
+function showHonors() {
+
+    document
+        .getElementById("collegeTwo")
+        .classList.add("hidden");
+
+    document
+        .getElementById("honorsScreen")
+        .classList.remove("hidden");
+
+}
+
+
+function finishChapterOne() {
+
+    alert(
+        "Chapter 02 is next. 🎓⚡"
+    );
+
+}
+
+  function showRee() {
+
+    document
+        .getElementById("honorsScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("reeScreen")
+        .classList.remove("hidden");
+
+}
+
+function showLpt() {
+
+    document
+        .getElementById("reeScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("lptScreen")
+        .classList.remove("hidden");
+
+}
+
+function showTeacher() {
+
+    document.getElementById("lptScreen").style.display = "none";
+
+    const teacherScreen =
+        document.getElementById("teacherScreen");
+
+    teacherScreen.style.display = "block";
+
+    teacherScreen.classList.remove("hidden");
+
+}
+
+function showMasters() {
+
+    document
+        .getElementById("teacherScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("mastersScreen")
+        .classList.remove("hidden");
+
+}
+
+function showOurStory() {
+
+    document
+        .getElementById("mastersScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("ourStoryScreen")
+        .classList.remove("hidden");
+
+}
+
+function openOurStory() {
+
+    const intro = document.getElementById("ourStoryScreen");
+    const story = document.getElementById("collegeStoryScreen");
+
+    intro.classList.add("hidden");
+    story.classList.remove("hidden");
+
+}
+  
+function verifyLicense() {
+
+    const button =
+        document.getElementById("verifyButton");
+
+    const status =
+        document.getElementById("licenseStatus");
+
+    button.classList.add("checking");
+
+    button.disabled = true;
+
+    status.innerHTML =
+        "Checking qualifications...";
+
+    setTimeout(() => {
+
+        status.innerHTML =
+            "Checking electrical engineering degree...";
+
+    }, 900);
+
+    setTimeout(() => {
+
+        status.innerHTML =
+            "Checking exam results...";
+
+    }, 1800);
+
+    setTimeout(() => {
+
+        status.innerHTML =
+            "Checking brain cells... 🧠";
+
+    }, 2700);
+
+    setTimeout(() => {
+
+        status.innerHTML =
+            "✓ VERIFIED — Registered Electrical Engineer, 2022.";
+
+    }, 3600);
+
+    setTimeout(() => {
+
+        button.classList.add("hidden");
+
+        document
+            .getElementById("continueLicense")
+            .classList.remove("hidden");
+
+    }, 4000);
+
+}
+function answerQuiz(isCorrect) {
+
+    const result = document.getElementById("quizResult");
+    const unlock = document.getElementById("unlockButton");
+
+    if (isCorrect) {
+
+        result.innerHTML =
+            "CORRECT! 🏆 Okay, you may proceed, Engineer.";
+
+        result.className =
+            "quiz-result correct";
+
+        unlock.classList.remove("hidden");
+
+        document
+            .querySelectorAll(".quiz-options button")
+            .forEach(function(button) {
+                button.disabled = true;
+            });
+
+    } else {
+
+        result.innerHTML =
+            "HAHAHA 😭 Nope. Try again!";
+
+        result.className =
+            "quiz-result wrong";
+    }
+}
+  function lptAnswer(isCorrect) {
+
+    const result =
+        document.getElementById("lptResult");
+
+    const continueButton =
+        document.getElementById("lptContinue");
+
+    if (isCorrect) {
+
+        result.innerHTML =
+            "CORRECT! 🎓 Licensed Professional Teacher unlocked!";
+
+        result.className =
+            "quiz-result correct";
+
+        continueButton.classList.remove("hidden");
+
+        document
+            .querySelectorAll(".lpt-options button")
+            .forEach(function(button) {
+                button.disabled = true;
+            });
+
+    } else {
+
+        result.innerHTML =
+            "HAHAHA 😭 Try again. Hindi yan ang LPT.";
+
+        result.className =
+            "quiz-result wrong";
+
+    }
+  }
+
+  function teacherAnswer(isCorrect) {
+
+    const result =
+        document.getElementById("teacherResult");
+
+    const continueButton =
+        document.getElementById("teacherContinue");
+
+    if (isCorrect) {
+
+        result.innerHTML =
+            "CORRECT! 😂 After all those students and paperwork, definitely a celebration.";
+
+        result.className =
+            "quiz-result correct";
+
+        continueButton.classList.remove("hidden");
+
+        document
+            .querySelectorAll(".teacher-options button")
+            .forEach(function(button) {
+                button.disabled = true;
+            });
+
+    } else {
+
+        result.innerHTML =
+            "HAHAHA NO 😭 He already has enough of those.";
+
+        result.className =
+            "quiz-result wrong";
+
+    }
+  }
+
+  function mastersChoice() {
+
+    const result =
+        document.getElementById("mastersResult");
+
+    const continueButton =
+        document.getElementById("storyContinue");
+
+    result.innerHTML =
+        "WARNING: Last chapter contains someone very important. 👀❤️";
+
+    result.className =
+        "quiz-result correct";
+
+    continueButton.classList.remove("hidden");
+  }
+
+  function showOurMemories() {
+
+    const college =
+        document.getElementById("collegeStoryScreen");
+
+    const beforeMe =
+        document.getElementById("beforeMeScreen");
+
+    college.classList.add("hidden");
+    beforeMe.classList.remove("hidden");
+
+  }
+
+  function showUs() {
+
+    document
+        .getElementById("beforeMeScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("ourStoryScreen")
+        .classList.add("hidden");
+
+    document
+        .getElementById("usScreen")
+        .classList.remove("hidden");
+
+  }
+
+  function showVideoGreets() {
+
+    document.getElementById("usScreen").classList.add("hidden");
+
+    document.getElementById("videoGreetsScreen").classList.remove("hidden");
+
+  }
+  
+</script>
+
+</body>
+</html>
