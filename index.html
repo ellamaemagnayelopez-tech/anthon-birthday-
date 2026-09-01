@@ -2326,6 +2326,32 @@ button {
 .gift-reveal strong {
     font-size: 12px;
 }
+
+    .gift-progress {
+    width: 220px;
+    height: 8px;
+    background: #eee5de;
+    border-radius: 20px;
+    margin: 20px auto 5px;
+    overflow: hidden;
+}
+
+.gift-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #c99491;
+    border-radius: 20px;
+    transition: width .3s ease;
+}
+
+.gift-percent {
+    font-size: 11px !important;
+    margin: 5px 0 0;
+}
+
+.gift-box {
+    cursor: pointer;
+}
     
 </style>
 </head>
@@ -3982,17 +4008,30 @@ button {
         </h1>
 
         <p id="giftInstruction">
-            Keep tapping the gift. 🎁
-        </p>
+    Keep tapping the gift. 🎁
+</p>
 
-        <button
-            class="gift-box"
-            id="giftBox"
-            onclick="openGift()">
+<div class="gift-progress">
+    <div
+        class="gift-progress-bar"
+        id="giftProgressBar">
+    </div>
+</div>
 
-            🎁
+<p
+    class="gift-percent"
+    id="giftPercent">
+    0%
+</p>
 
-        </button>
+<button
+    class="gift-box"
+    id="giftBox"
+    onclick="openGift()">
+
+    🎁
+
+</button>
 
         <div
             id="giftReveal"
@@ -4744,11 +4783,15 @@ function answerQuiz(isCorrect) {
 
 let giftClicks = 0;
 
+let giftPercent = 0;
+
 function openGift() {
 
     const gift = document.getElementById("giftBox");
+    const progressBar = document.getElementById("giftProgressBar");
+    const percent = document.getElementById("giftPercent");
 
-    giftClicks++;
+    giftPercent += 10;
 
     gift.classList.remove("shake");
 
@@ -4756,7 +4799,10 @@ function openGift() {
 
     gift.classList.add("shake");
 
-    if (giftClicks >= 7) {
+    progressBar.style.width = giftPercent + "%";
+    percent.textContent = giftPercent + "%";
+
+    if (giftPercent >= 100) {
 
         gift.style.display = "none";
 
@@ -4765,10 +4811,20 @@ function openGift() {
             .style.display = "none";
 
         document
+            .getElementById("giftPercent")
+            .style.display = "none";
+
+        document
+            .querySelector(".gift-progress")
+            .style.display = "none";
+
+        document
             .getElementById("giftReveal")
             .classList.remove("hidden");
 
     }
+
+}
 
 }
 
