@@ -2046,14 +2046,16 @@ button {
 }
     /* COCO & CHICHI */
 
+/* COCO & CHICHI */
+
 #cocoChichiScreen {
     overflow: hidden;
+    position: relative;
 }
 
 .dog-intro {
     position: relative;
-    z-index: 10;
-    margin-bottom: 15px;
+    z-index: 20;
 }
 
 .dog-intro span {
@@ -2074,76 +2076,106 @@ button {
     line-height: 1.6;
 }
 
+/* PHOTO RAIN */
+
 .dog-rain {
-    position: relative;
-    width: 100%;
-    height: 430px;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
 }
 
-.dog-rain img {
+.dog-placeholder {
     position: absolute;
-    width: 110px;
-    height: 140px;
-    object-fit: cover;
 
+    width: 115px;
+    height: 145px;
+
+    background: #e8dfd7;
     border: 6px solid white;
     border-radius: 10px;
 
     box-shadow: 0 10px 25px rgba(60,45,35,.15);
 
-    animation: dogFall 7s linear infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 45px;
+
+    top: -180px;
+
+    animation: pictureRain 5s linear infinite;
 }
 
-.dog-rain img:nth-child(1) {
+/* RANDOM POSITIONS */
+
+.dog-placeholder:nth-child(1) {
     left: 5%;
     animation-delay: 0s;
 }
 
-.dog-rain img:nth-child(2) {
-    right: 5%;
-    animation-delay: 1s;
+.dog-placeholder:nth-child(2) {
+    left: 22%;
+    animation-delay: 1.2s;
 }
 
-.dog-rain img:nth-child(3) {
-    left: 18%;
-    animation-delay: 2s;
+.dog-placeholder:nth-child(3) {
+    left: 40%;
+    animation-delay: 2.4s;
 }
 
-.dog-rain img:nth-child(4) {
-    right: 18%;
+.dog-placeholder:nth-child(4) {
+    left: 58%;
+    animation-delay: .6s;
+}
+
+.dog-placeholder:nth-child(5) {
+    left: 73%;
+    animation-delay: 1.8s;
+}
+
+.dog-placeholder:nth-child(6) {
+    left: 88%;
     animation-delay: 3s;
 }
 
-.dog-rain img:nth-child(5) {
-    left: 35%;
-    animation-delay: 4s;
+.dog-placeholder small {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #77716c;
+    margin-top: 8px;
 }
 
-.dog-rain img:nth-child(6) {
-    right: 35%;
-    animation-delay: 5s;
-}
+/* FALLING */
 
-@keyframes dogFall {
+@keyframes pictureRain {
+
     0% {
-        top: -160px;
+        top: -180px;
         opacity: 0;
-        transform: rotate(-8deg);
+        transform: rotate(-10deg);
     }
 
-    15% {
+    10% {
         opacity: 1;
     }
 
-    85% {
+    50% {
+        transform: rotate(8deg);
+    }
+
+    90% {
         opacity: 1;
     }
 
     100% {
-        top: 430px;
+        top: 110vh;
         opacity: 0;
-        transform: rotate(8deg);
+        transform: rotate(-6deg);
     }
+
 }
   
 </style>
@@ -3674,7 +3706,7 @@ button {
 
 </div>
 
-    <!-- COCO & CHICHI -->
+ <!-- COCO & CHICHI -->
 
 <div class="chapter-screen hidden" id="cocoChichiScreen">
 
@@ -3702,17 +3734,16 @@ button {
 
     <div class="dog-rain">
 
-    <div class="dog-placeholder">🐶<small>COCO</small></div>
-    <div class="dog-placeholder">🐶<small>CHICHI</small></div>
-    <div class="dog-placeholder">🐶<small>COCO</small></div>
-    <div class="dog-placeholder">🐶<small>CHICHI</small></div>
-    <div class="dog-placeholder">🐶<small>COCO</small></div>
-    <div class="dog-placeholder">🐶<small>CHICHI</small></div>
+        <div class="dog-placeholder">🐶<small>COCO</small></div>
+        <div class="dog-placeholder">🐶<small>CHICHI</small></div>
+        <div class="dog-placeholder">🐶<small>COCO</small></div>
+        <div class="dog-placeholder">🐶<small>CHICHI</small></div>
+        <div class="dog-placeholder">🐶<small>COCO</small></div>
+        <div class="dog-placeholder">🐶<small>CHICHI</small></div>
+
+    </div>
 
 </div>
-
-</div>
-
 <script>
 
 /* ================= OPENING ================= */
