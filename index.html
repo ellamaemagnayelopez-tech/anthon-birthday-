@@ -3891,6 +3891,15 @@ button {
         <div class="dog-placeholder">🐶<small>CHICHI</small></div>
 
     </div>
+
+     <button
+        class="yes"
+        onclick="showMyMessage()">
+
+        next → 🤍
+
+    </button>
+    
 </div>
 
     <!-- MY BIRTHDAY MESSAGE -->
@@ -4760,6 +4769,18 @@ function openGift() {
             .classList.remove("hidden");
 
     }
+
+}
+
+    function showMyMessage() {
+
+    document.querySelectorAll(".chapter-screen").forEach(function(screen) {
+        screen.classList.add("hidden");
+    });
+
+    document
+        .getElementById("myMessageScreen")
+        .classList.remove("hidden");
 
 }
   
