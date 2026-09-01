@@ -2174,7 +2174,159 @@ button {
     }
 
 }
-  
+  /* MY MESSAGE */
+
+.message-layout {
+    width: min(92vw, 500px);
+    height: 430px;
+    position: relative;
+}
+
+.message-card {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(1deg);
+
+    width: 260px;
+    padding: 25px 22px;
+
+    background: #fffdf9;
+
+    box-shadow: 0 15px 35px rgba(60,45,35,.12);
+
+    z-index: 5;
+}
+
+.message-card span {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #a27a78;
+}
+
+.message-card h1 {
+    font-size: 30px;
+    line-height: 1.1;
+    margin: 8px 0 14px;
+}
+
+.message-card p {
+    color: #77716c;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.message-photo {
+    position: absolute;
+
+    width: 120px;
+    height: 145px;
+
+    background: #e8dfd7;
+    border: 6px solid white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 40px;
+
+    box-shadow: 0 10px 25px rgba(60,45,35,.12);
+
+    animation: photoBounce 2.5s ease-in-out infinite;
+}
+
+.photo-left-top {
+    left: 0;
+    top: 15px;
+    transform: rotate(-8deg);
+}
+
+.photo-right-top {
+    right: 0;
+    top: 15px;
+    transform: rotate(8deg);
+    animation-delay: .5s;
+}
+
+.photo-left-bottom {
+    left: 0;
+    bottom: 10px;
+    transform: rotate(7deg);
+    animation-delay: 1s;
+}
+
+.photo-right-bottom {
+    right: 0;
+    bottom: 10px;
+    transform: rotate(-7deg);
+    animation-delay: 1.5s;
+}
+
+@keyframes photoBounce {
+    0%,100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -10px;
+    }
+}
+
+/* GIFT */
+
+.gift-content {
+    text-align: center;
+}
+
+.gift-content > span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #a27a78;
+}
+
+.gift-content h1 {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.gift-content p {
+    color: #77716c;
+    font-size: 13px;
+}
+
+.gift-box {
+    background: transparent;
+    font-size: 100px;
+    margin-top: 25px;
+
+    transition: transform .15s ease;
+}
+
+.gift-box.shake {
+    animation: giftShake .25s ease;
+}
+
+@keyframes giftShake {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(-10deg) scale(1.1); }
+    50% { transform: rotate(10deg) scale(1.15); }
+    75% { transform: rotate(-8deg) scale(1.1); }
+    100% { transform: rotate(0) scale(1); }
+}
+
+.gift-reveal {
+    margin-top: 20px;
+}
+
+.gift-reveal h1 {
+    font-size: 28px;
+}
+
+.gift-reveal strong {
+    font-size: 12px;
+}
+    
 </style>
 </head>
 
@@ -3739,6 +3891,119 @@ button {
         <div class="dog-placeholder">🐶<small>CHICHI</small></div>
 
     </div>
+</div>
+
+    <!-- MY BIRTHDAY MESSAGE -->
+
+<div class="chapter-screen hidden" id="myMessageScreen">
+
+    <div class="chapter-header">
+        <span>05 / JUST US</span>
+        <span>A MESSAGE FROM ME</span>
+    </div>
+
+    <div class="message-layout">
+
+        <div class="message-photo photo-left-top">
+            📸
+        </div>
+
+        <div class="message-photo photo-right-top">
+            📸
+        </div>
+
+        <div class="message-card">
+
+            <span>A LITTLE MESSAGE FOR YOU</span>
+
+            <h1>
+                Happy birthday,<br>
+                By. 🤍
+            </h1>
+
+            <p>
+                I’m so proud of the person you’ve become
+                and everything you’ve achieved.
+                <br><br>
+                After all these years, I’m still happy
+                that I get to celebrate your little and
+                big wins with you.
+                <br><br>
+                I hope this year brings you more reasons
+                to smile, more dreams to chase,
+                and more moments for us.
+                <br><br>
+                And yes, you deserve to be spoiled
+                a little today. 😂
+            </p>
+
+        </div>
+
+        <div class="message-photo photo-left-bottom">
+            📸
+        </div>
+
+        <div class="message-photo photo-right-bottom">
+            📸
+        </div>
+
+    </div>
+
+    <button
+        class="yes"
+        onclick="showGift()">
+
+        one last surprise → 🎁
+
+    </button>
+
+</div>
+
+
+<!-- GIFT -->
+
+<div class="chapter-screen hidden" id="giftScreen">
+
+    <div class="gift-content">
+
+        <span>ONE LAST THING...</span>
+
+        <h1>
+            I got you something. 👀
+        </h1>
+
+        <p id="giftInstruction">
+            Keep tapping the gift. 🎁
+        </p>
+
+        <button
+            class="gift-box"
+            id="giftBox"
+            onclick="openGift()">
+
+            🎁
+
+        </button>
+
+        <div
+            id="giftReveal"
+            class="gift-reveal hidden">
+
+            <h1>
+                HAPPY BIRTHDAY, BY! 🎉🤍
+            </h1>
+
+            <p>
+                Your gift is waiting for you at home. 🎁
+            </p>
+
+            <strong>
+                Yep. You actually have a real gift. 😂
+            </strong>
+
+        </div>
+
+    </div>
 
 </div>
 <script>
@@ -4452,6 +4717,49 @@ function answerQuiz(isCorrect) {
 
     cocoChichi.classList.remove("hidden");
     cocoChichi.style.display = "flex";
+
+}
+
+    function showGift() {
+
+    document.querySelectorAll(".chapter-screen").forEach(function(screen) {
+        screen.classList.add("hidden");
+    });
+
+    document
+        .getElementById("giftScreen")
+        .classList.remove("hidden");
+
+}
+
+
+let giftClicks = 0;
+
+function openGift() {
+
+    const gift = document.getElementById("giftBox");
+
+    giftClicks++;
+
+    gift.classList.remove("shake");
+
+    void gift.offsetWidth;
+
+    gift.classList.add("shake");
+
+    if (giftClicks >= 7) {
+
+        gift.style.display = "none";
+
+        document
+            .getElementById("giftInstruction")
+            .style.display = "none";
+
+        document
+            .getElementById("giftReveal")
+            .classList.remove("hidden");
+
+    }
 
 }
   
