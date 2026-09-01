@@ -2044,13 +2044,12 @@ button {
     border-radius: 12px;
     display: block;
 }
-    /* COCO & CHICHI */
 
 /* COCO & CHICHI */
 
 #cocoChichiScreen {
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
 }
 
 .dog-intro {
@@ -2076,26 +2075,26 @@ button {
     line-height: 1.6;
 }
 
-/* PHOTO RAIN */
-
 .dog-rain {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     pointer-events: none;
+    z-index: 5;
 }
 
 .dog-placeholder {
     position: absolute;
 
-    width: 115px;
-    height: 145px;
+    width: 110px;
+    height: 140px;
 
     background: #e8dfd7;
     border: 6px solid white;
     border-radius: 10px;
-
-    box-shadow: 0 10px 25px rgba(60,45,35,.15);
 
     display: flex;
     flex-direction: column;
@@ -2106,39 +2105,7 @@ button {
 
     top: -180px;
 
-    animation: pictureRain 5s linear infinite;
-}
-
-/* RANDOM POSITIONS */
-
-.dog-placeholder:nth-child(1) {
-    left: 5%;
-    animation-delay: 0s;
-}
-
-.dog-placeholder:nth-child(2) {
-    left: 22%;
-    animation-delay: 1.2s;
-}
-
-.dog-placeholder:nth-child(3) {
-    left: 40%;
-    animation-delay: 2.4s;
-}
-
-.dog-placeholder:nth-child(4) {
-    left: 58%;
-    animation-delay: .6s;
-}
-
-.dog-placeholder:nth-child(5) {
-    left: 73%;
-    animation-delay: 1.8s;
-}
-
-.dog-placeholder:nth-child(6) {
-    left: 88%;
-    animation-delay: 3s;
+    animation: pictureRain 6s linear infinite;
 }
 
 .dog-placeholder small {
@@ -2148,7 +2115,37 @@ button {
     margin-top: 8px;
 }
 
-/* FALLING */
+/* POSITIONS */
+
+.dog-placeholder:nth-child(1) {
+    left: 3%;
+    animation-delay: 0s;
+}
+
+.dog-placeholder:nth-child(2) {
+    left: 20%;
+    animation-delay: 1s;
+}
+
+.dog-placeholder:nth-child(3) {
+    left: 38%;
+    animation-delay: 2s;
+}
+
+.dog-placeholder:nth-child(4) {
+    left: 55%;
+    animation-delay: 3s;
+}
+
+.dog-placeholder:nth-child(5) {
+    left: 72%;
+    animation-delay: 4s;
+}
+
+.dog-placeholder:nth-child(6) {
+    left: 88%;
+    animation-delay: 5s;
+}
 
 @keyframes pictureRain {
 
@@ -2173,7 +2170,7 @@ button {
     100% {
         top: 110vh;
         opacity: 0;
-        transform: rotate(-6deg);
+        transform: rotate(-8deg);
     }
 
 }
