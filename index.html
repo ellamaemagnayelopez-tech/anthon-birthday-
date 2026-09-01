@@ -4232,15 +4232,19 @@ function answerQuiz(isCorrect) {
 
  function showLingling() {
 
-    document.querySelectorAll(".chapter-screen").forEach(function(screen) {
-        screen.classList.add("hidden");
-    });
+    document
+        .querySelectorAll(".chapter-screen")
+        .forEach(function(screen) {
+            screen.classList.add("hidden");
+        });
 
-    const lingling = document.getElementById("linglingScreen");
+    document
+        .getElementById("linglingScreen")
+        .classList.remove("hidden");
 
-    lingling.classList.remove("hidden");
-    lingling.style.display = "block";
-
+    document
+        .getElementById("linglingScreen")
+        .style.display = "flex";
 }
 
   function showFamily() {
