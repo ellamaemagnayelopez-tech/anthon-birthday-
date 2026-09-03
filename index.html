@@ -3585,6 +3585,33 @@ h1,
         margin-top: 155px;
     }
 }
+
+    /* =========================================
+   CLICK ALBUM TO FLIP
+========================================= */
+
+#usScreen .album-book {
+    cursor: pointer;
+}
+
+#usScreen .album-book::after {
+    content: "CLICK LEFT / RIGHT SIDE TO FLIP";
+
+    position: absolute;
+    left: 50%;
+    bottom: -32px;
+
+    transform: translateX(-50%);
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: rgba(235,232,248,.45);
+
+    white-space: nowrap;
+
+    pointer-events: none;
+}
     
 </style>
 </head>
@@ -6319,7 +6346,9 @@ function previousMemory() {
     }, 750);
 }
 
-    document.addEventListener("DOMContentLoaded", function () {
+
+/* CLICK ALBUM TO FLIP */
+document.addEventListener("DOMContentLoaded", function () {
 
     const album = document.querySelector(".album-book");
 
@@ -6330,30 +6359,13 @@ function previousMemory() {
         const rect = album.getBoundingClientRect();
         const clickX = event.clientX - rect.left;
 
+        /* LEFT SIDE = PREVIOUS */
         if (clickX < rect.width / 2) {
             previousMemory();
-        } else {
-            nextMemory();
         }
 
-    });
-
-});
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-    const album = document.querySelector(".album-book");
-
-    if (!album) return;
-
-    album.addEventListener("click", function (event) {
-
-        const rect = album.getBoundingClientRect();
-        const clickX = event.clientX - rect.left;
-
-        if (clickX < rect.width / 2) {
-            previousMemory();
-        } else {
+        /* RIGHT SIDE = NEXT */
+        else {
             nextMemory();
         }
 
