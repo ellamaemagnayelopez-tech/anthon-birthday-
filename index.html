@@ -537,20 +537,18 @@ button {
 
 .child-note {
     position: absolute;
-
     left: 19%;
     bottom: 0;
-
     width: 270px;
 
-    background: #fffdf9;
+    background: #f3e8df;
+    color: #443b37;
 
     padding: 16px 20px;
-
     text-align: left;
 
     box-shadow:
-        0 8px 25px rgba(60,45,35,.08);
+        0 8px 25px rgba(60,45,35,.12);
 
     transform: rotate(1deg);
 
@@ -560,10 +558,11 @@ button {
 .child-note strong {
     font-family: 'Playfair Display', serif;
     font-size: 21px;
+    color: #3f3733;
 }
 
 .child-note p {
-    color: #77716c;
+    color: #625852;
     font-size: 11px;
     line-height: 1.55;
     margin: 7px 0 0;
@@ -795,7 +794,7 @@ button {
 .transition-note {
     width: min(88vw, 380px);
 
-    background: #fffdf9;
+    background: linear-gradient(135deg, #f3e8df, #eee5f0);
 
     padding: 17px 20px;
 
@@ -807,15 +806,18 @@ button {
     text-align: left;
 
     transform: rotate(-1deg);
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 4px;
 }
 
 .transition-note strong {
     font-family: 'Playfair Display', serif;
     font-size: 18px;
+    color: #443b42;
 }
 
 .transition-note p {
-    color: #77716c;
+    color: #625b60;
     font-size: 11px;
     line-height: 1.6;
     margin: 7px 0 0;
@@ -960,6 +962,7 @@ button {
     font-family: 'Playfair Display', serif;
     font-size: clamp(40px, 9vw, 55px);
     margin: 6px 0;
+    color: #292725;
 }
 
 .achievement-subtitle {
@@ -1021,8 +1024,8 @@ button {
 }
 
 .stat-card {
-    background: white;
-
+    background: #f3e8df;
+    color: #443b42;
     padding: 14px 12px;
 
     text-align: left;
