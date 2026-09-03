@@ -6339,6 +6339,27 @@ function previousMemory() {
     });
 
 });
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const album = document.querySelector(".album-book");
+
+    if (!album) return;
+
+    album.addEventListener("click", function (event) {
+
+        const rect = album.getBoundingClientRect();
+        const clickX = event.clientX - rect.left;
+
+        if (clickX < rect.width / 2) {
+            previousMemory();
+        } else {
+            nextMemory();
+        }
+
+    });
+
+});
     
 </script>
 
