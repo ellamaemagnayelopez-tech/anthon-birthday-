@@ -3144,6 +3144,7 @@ h1,
     opacity: 1;
     pointer-events: auto;
     z-index: 5;
+    transform: rotateY(0deg);
 }
 
 
@@ -3356,6 +3357,48 @@ h1,
         transform: rotateY(180deg);
         opacity: 0;
     }
+}
+
+    /* =========================================
+   MEMORY ALBUM — LAYOUT FIX
+========================================= */
+
+.memory-album {
+    width: min(88vw, 420px) !important;
+    margin: 24px auto 20px !important;
+}
+
+.album-book {
+    width: 100% !important;
+    max-width: 420px !important;
+    height: 390px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+}
+
+.album-page {
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    left: 0 !important;
+    right: auto !important;
+}
+
+.album-controls {
+    width: 100% !important;
+    height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 15px auto 0 !important;
+    position: relative !important;
+    z-index: 100 !important;
+}
+
+.album-controls button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
     
 </style>
