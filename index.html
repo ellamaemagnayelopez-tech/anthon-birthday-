@@ -2996,11 +2996,52 @@ h1,
         scale: 1;
     }
 }
+    /* =========================================
+   ✦ GLOBAL COSMIC DUST
+========================================= */
+
+.cosmic-dust {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image:
+        radial-gradient(circle at 12% 20%, rgba(210,220,255,.45) 0 1px, transparent 2px),
+        radial-gradient(circle at 78% 15%, rgba(180,200,255,.35) 0 1px, transparent 2px),
+        radial-gradient(circle at 35% 72%, rgba(220,210,255,.3) 0 1px, transparent 2px),
+        radial-gradient(circle at 88% 68%, rgba(170,190,255,.3) 0 1px, transparent 2px),
+        radial-gradient(circle at 55% 40%, rgba(255,255,255,.25) 0 1px, transparent 2px),
+        radial-gradient(circle at 20% 88%, rgba(180,200,255,.25) 0 1px, transparent 2px);
+
+    background-size:
+        260px 260px,
+        320px 320px,
+        380px 380px,
+        300px 300px,
+        420px 420px,
+        340px 340px;
+
+    opacity: .65;
+    animation: cosmicDust 30s ease-in-out infinite;
+}
+
+@keyframes cosmicDust {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
     
 </style>
 </head>
 
 <body>
+
+    <div class="cosmic-dust"></div>
 
 <!-- OPENING -->
 
