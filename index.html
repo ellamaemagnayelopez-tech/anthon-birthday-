@@ -3395,6 +3395,22 @@ h1,
     position: relative;
     z-index: 100;
 }
+
+    .album-page.flip-out {
+    animation: pageTurnOut .7s ease forwards;
+}
+
+@keyframes pageTurnOut {
+    0% {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotateY(-100deg);
+        opacity: 0;
+    }
+}
     
 </style>
 </head>
@@ -6054,13 +6070,22 @@ function nextMemory() {
     const pages = document.querySelectorAll(".album-page");
 
     if (currentMemory < pages.length - 1) {
-        showMemoryPage(currentMemory + 1, "next");
-    }
-}
+        const currentPage = pages[currentMemory];
 
-function previousMemory() {
-    if (currentMemory > 0) {
-        showMemoryPage(currentMemory - 1, "prev");
+        currentPage.classList.add("flip-out");
+
+        setTimeout(() => {
+            currentPage.classList.remove("active", "flip-out");
+            currentMemory++;
+
+            pages[currentMemory].classList.add("active");
+
+            const pageNumber = document.getElementById("memoryPageNumber");
+            if (pageNumber) {
+                pageNumber.textContent =
+                    `${currentMemory + 1} / ${pages.length}`;
+            }
+        }, 700);
     }
 }
 </script>
