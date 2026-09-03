@@ -3871,22 +3871,6 @@ h1,
 
     </div>
 
-    <p
-        id="quizResult"
-        class="quiz-result">
-    </p>
-
-    <button
-        id="unlockButton"
-        class="yes hidden"
-        style="margin-top:12px;"
-        onclick="showRee()">
-
-        UNLOCK NEXT →
-    </button>
-
-    </div>
-
 </div>
 
 
@@ -4285,12 +4269,12 @@ h1,
     </div>
 
     <button
-        class="yes"
-        onclick="showBeforeMe()"
+    class="yes"
+    onclick="showBeforeMe()">
 
-        wait... there's more 👀 →
+    wait... there's more 👀 →
 
-    </button>
+</button>
 
 </div>
 
@@ -5447,19 +5431,6 @@ function answerQuiz(isCorrect) {
     document
         .getElementById("familyScreen")
         .classList.remove("hidden");
-
-  }
-
-    function showCocoChichi() {
-
-    document.querySelectorAll(".chapter-screen").forEach(function(screen) {
-        screen.classList.add("hidden");
-    });
-
-    const cocoChichi = document.getElementById("cocoChichiScreen");
-
-    cocoChichi.classList.remove("hidden");
-    cocoChichi.style.display = "flex";
 
 }
 
