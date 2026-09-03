@@ -2378,21 +2378,32 @@ button {
 body {
     background:
         radial-gradient(
-            circle at 50% 45%,
-            rgba(74, 73, 130, .20),
-            transparent 35%
+            ellipse at 15% 20%,
+            rgba(70, 100, 220, .32),
+            transparent 38%
         ),
         radial-gradient(
-            circle at 15% 20%,
-            rgba(90, 110, 180, .12),
-            transparent 28%
+            ellipse at 85% 15%,
+            rgba(150, 75, 210, .28),
+            transparent 36%
         ),
         radial-gradient(
-            circle at 85% 80%,
-            rgba(120, 82, 150, .10),
-            transparent 30%
+            ellipse at 75% 80%,
+            rgba(40, 145, 210, .24),
+            transparent 40%
         ),
-        #070914;
+        radial-gradient(
+            ellipse at 20% 85%,
+            rgba(120, 55, 180, .20),
+            transparent 38%
+        ),
+        linear-gradient(
+            135deg,
+            #040718 0%,
+            #0a1030 35%,
+            #11102f 65%,
+            #070817 100%
+        );
 
     color: #f5f3ff;
 }
@@ -2407,27 +2418,26 @@ body::before {
     inset: 0;
 
     pointer-events: none;
+    z-index: -2;
 
     background-image:
-        radial-gradient(circle, rgba(255,255,255,.75) 1px, transparent 1.5px),
-        radial-gradient(circle, rgba(180,190,255,.45) 1px, transparent 1.5px),
-        radial-gradient(circle, rgba(255,255,255,.30) 1px, transparent 1.5px);
+        radial-gradient(circle, rgba(255,255,255,.85) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(140,180,255,.65) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(210,150,255,.55) 1px, transparent 1.5px);
 
     background-size:
-        95px 95px,
-        150px 150px,
-        230px 230px;
+        110px 110px,
+        175px 175px,
+        260px 260px;
 
     background-position:
         10px 20px,
         70px 40px,
         120px 90px;
 
-    opacity: .45;
+    opacity: .55;
 
-    z-index: -2;
-
-    animation: starsMove 35s linear infinite;
+    animation: starsMove 40s linear infinite;
 }
 
 @keyframes starsMove {
@@ -2446,29 +2456,37 @@ body::before {
 
 body::after {
     content: "";
-
     position: fixed;
-    inset: -20%;
+    inset: -25%;
 
     pointer-events: none;
+    z-index: -3;
 
     background:
         radial-gradient(
-            ellipse at 30% 40%,
-            rgba(85, 95, 180, .10),
+            ellipse at 20% 30%,
+            rgba(55, 100, 255, .22),
+            transparent 42%
+        ),
+        radial-gradient(
+            ellipse at 75% 25%,
+            rgba(190, 70, 220, .20),
             transparent 40%
         ),
         radial-gradient(
-            ellipse at 70% 60%,
-            rgba(130, 80, 180, .08),
-            transparent 42%
+            ellipse at 55% 75%,
+            rgba(40, 180, 220, .18),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 85% 70%,
+            rgba(120, 60, 210, .16),
+            transparent 38%
         );
 
-    filter: blur(35px);
+    filter: blur(50px);
 
-    z-index: -3;
-
-    animation: nebulaMove 18s ease-in-out infinite alternate;
+    animation: nebulaMove 20s ease-in-out infinite alternate;
 }
 
 @keyframes nebulaMove {
