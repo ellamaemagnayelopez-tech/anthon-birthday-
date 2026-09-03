@@ -3091,12 +3091,78 @@ h1,
     flex-shrink: 0;
 }
 
+/* =========================================
+   MEMORY ALBUM — PAGE FLIP
+========================================= */
+
 .album-page {
     position: absolute;
     inset: 0;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform-origin: left center;
+
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
-/* NOTES — RIGHT */
+.album-page.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 2;
+}
+
+/* NEXT */
+.album-page.page-turn-next {
+    animation: albumFlipNext 0.75s ease forwards;
+    z-index: 3;
+}
+
+@keyframes albumFlipNext {
+    0% {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotateY(-180deg);
+        opacity: 0;
+    }
+}
+
+/* PREVIOUS */
+.album-page.page-turn-prev {
+    animation: albumFlipPrev 0.75s ease forwards;
+    z-index: 3;
+}
+
+@keyframes albumFlipPrev {
+    0% {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+/* ALBUM 3D */
+
+.album-book {
+    position: relative;
+    width: 420px;
+    height: 390px;
+    perspective: 1200px;
+}
+
+/* NOTES — LEFT */
+
 .album-info {
     width: 260px;
     text-align: left;
@@ -3136,6 +3202,8 @@ h1,
     color: rgba(235,232,248,.45);
 }
 
+/* CONTROLS */
+
 .album-controls {
     display: flex;
     align-items: center;
@@ -3151,6 +3219,7 @@ h1,
 }
 
 /* MOBILE */
+
 @media (max-width: 700px) {
 
     .memory-album {
@@ -3171,6 +3240,7 @@ h1,
     .album-info-line {
         margin: 20px auto 14px;
     }
+
 }
 
     /* =========================================
