@@ -3064,6 +3064,173 @@ h1,
     z-index: 999;
     pointer-events: none;
 }
+
+    /* =========================================
+   📖 MEMORY ALBUM — NOTEBOOK STYLE
+========================================= */
+
+.memory-album {
+    width: min(88vw, 430px);
+    margin: 28px auto 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* THE NOTEBOOK */
+.album-book {
+    position: relative;
+    width: 100%;
+    max-width: 390px;
+    height: 420px;
+    perspective: 1800px;
+}
+
+/* EACH PAGE */
+.album-page {
+    position: absolute;
+    inset: 0;
+    padding: 22px;
+
+    background: rgba(20, 18, 25, 0.62);
+    border: 1px solid rgba(255,255,255,.13);
+    border-radius: 4px 18px 18px 4px;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.25),
+        inset 8px 0 20px rgba(255,255,255,.025);
+
+    transform-origin: left center;
+    backface-visibility: hidden;
+
+    opacity: 0;
+    transform: rotateY(180deg);
+
+    transition:
+        transform .8s cubic-bezier(.22,.61,.36,1),
+        opacity .3s ease;
+
+    pointer-events: none;
+}
+
+/* CURRENT PAGE */
+.album-page.active {
+    opacity: 1;
+    transform: rotateY(0deg);
+    pointer-events: auto;
+    z-index: 5;
+}
+
+/* PHOTO AREA */
+.photo-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px dashed rgba(255,255,255,.22);
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.015)
+        );
+
+    color: rgba(255,255,255,.75);
+}
+
+.photo-placeholder span {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.photo-placeholder small {
+    margin-top: 12px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.48);
+}
+
+/* NOTEBOOK SPINE */
+.album-book::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 13px;
+
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,.28),
+        rgba(255,255,255,.035),
+        transparent
+    );
+
+    z-index: 20;
+    pointer-events: none;
+}
+
+/* PAGE CORNER */
+.album-page::after {
+    content: "";
+    position: absolute;
+    right: 13px;
+    bottom: 13px;
+
+    width: 22px;
+    height: 22px;
+
+    border-right: 1px solid rgba(255,255,255,.12);
+    border-bottom: 1px solid rgba(255,255,255,.12);
+    opacity: .6;
+}
+
+/* CONTROLS */
+.album-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin-top: 18px;
+}
+
+.album-controls button {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.15);
+
+    background: rgba(20,18,25,.45);
+    color: white;
+
+    font-size: 25px;
+    line-height: 1;
+
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.album-controls button:hover {
+    background: rgba(255,255,255,.12);
+    transform: scale(1.08);
+}
+
+#memoryPageNumber {
+    min-width: 55px;
+    text-align: center;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.58);
+}
     
 </style>
 </head>
@@ -4378,41 +4545,71 @@ h1,
             that came after...
         </p>
 
-        <div class="memory-gallery">
+        <div class="memory-album">
 
-            <div class="couple-photo photo-one">
-                📸
+    <div class="album-book">
+
+        <div class="album-page page-1 active">
+            <div class="photo-placeholder">
+                <span>PHOTO 01</span>
                 <small>COLLEGE US</small>
             </div>
-
-            <div class="couple-photo photo-two">
-                📸
-                <small>FIRST DATE</small>
-            </div>
-
-            <div class="couple-photo photo-three">
-                📸
-                <small>CEBU 2025</small>
-            </div>
-
         </div>
 
-        <p class="memory-caption">
-            9 years, countless memories,
-            and somehow... you're still my favorite person. 🥹
-        </p>
+        <div class="album-page page-2">
+            <div class="photo-placeholder">
+                <span>PHOTO 02</span>
+                <small>OUR EARLY DAYS</small>
+            </div>
+        </div>
 
-        <button
-    class="yes"
-    onclick="showTintin()">
+        <div class="album-page page-3">
+            <div class="photo-placeholder">
+                <span>PHOTO 03</span>
+                <small>FIRST DATE</small>
+            </div>
+        </div>
 
-    okay, now for the messages → ❤️
+        <div class="album-page page-4">
+            <div class="photo-placeholder">
+                <span>PHOTO 04</span>
+                <small>THE LITTLE MOMENTS</small>
+            </div>
+        </div>
 
-        </button>
+        <div class="album-page page-5">
+            <div class="photo-placeholder">
+                <span>PHOTO 05</span>
+                <small>CEBU 2025</small>
+            </div>
+        </div>
+
+        <div class="album-page page-6">
+            <div class="photo-placeholder">
+                <span>PHOTO 06</span>
+                <small>MORE MEMORIES</small>
+            </div>
+        </div>
+
+        <div class="album-page page-7">
+            <div class="photo-placeholder">
+                <span>PHOTO 07</span>
+                <small>AND HERE WE ARE</small>
+            </div>
+        </div>
 
     </div>
 
+    <div class="album-controls">
+        <button onclick="previousMemory()">‹</button>
+
+        <span id="memoryPageNumber">1 / 7</span>
+
+        <button onclick="nextMemory()">›</button>
+    </div>
+
 </div>
+        
   <!-- TINTIN -->
 
 <div
@@ -5529,6 +5726,41 @@ function showMyMessage() {
         .getElementById("myMessageScreen")
         .classList.remove("hidden");
 
+}
+    let currentMemory = 0;
+
+function showMemoryPage(index) {
+    const pages = document.querySelectorAll(".album-page");
+    const pageNumber = document.getElementById("memoryPageNumber");
+
+    if (!pages.length) return;
+
+    if (index < 0) index = 0;
+    if (index >= pages.length) index = pages.length - 1;
+
+    pages.forEach((page, i) => {
+        page.classList.toggle("active", i === index);
+    });
+
+    currentMemory = index;
+
+    if (pageNumber) {
+        pageNumber.textContent = `${index + 1} / ${pages.length}`;
+    }
+}
+
+function nextMemory() {
+    const pages = document.querySelectorAll(".album-page");
+
+    if (currentMemory < pages.length - 1) {
+        showMemoryPage(currentMemory + 1);
+    }
+}
+
+function previousMemory() {
+    if (currentMemory > 0) {
+        showMemoryPage(currentMemory - 1);
+    }
 }
 </script>
 
