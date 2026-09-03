@@ -3172,6 +3172,349 @@ h1,
         margin: 20px auto 14px;
     }
 }
+
+    /* =========================================
+   MEMORY ALBUM — FINAL LAYOUT
+   ALBUM LEFT / NOTES RIGHT
+========================================= */
+
+#usScreen .memories-content {
+    width: min(94vw, 1050px);
+    margin: 25px auto 0;
+}
+
+#usScreen .memory-album {
+    width: 100%;
+    max-width: 1000px;
+    margin: 35px auto 0;
+
+    display: grid;
+    grid-template-columns: 500px 280px;
+    align-items: center;
+    justify-content: center;
+
+    column-gap: 70px;
+    row-gap: 15px;
+}
+
+
+/* =========================
+   ALBUM — LEFT
+========================= */
+
+#usScreen .album-book {
+    position: relative;
+
+    width: 500px;
+    height: 390px;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   ALBUM PAGES
+========================= */
+
+#usScreen .album-page {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transform: translateX(20px) rotateY(-8deg) scale(.98);
+
+    transition:
+        opacity .5s ease,
+        transform .6s cubic-bezier(.2,.8,.2,1);
+}
+
+#usScreen .album-page.active {
+    opacity: 1;
+    pointer-events: auto;
+
+    transform:
+        translateX(0)
+        rotateY(0)
+        scale(1);
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+#usScreen .album-page .photo-placeholder {
+    width: 100%;
+    height: 260px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #171a2b,
+            #0e1020
+        );
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.45),
+        0 0 30px rgba(120,130,220,.08);
+}
+
+#usScreen .album-page .photo-placeholder span {
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: rgba(245,243,255,.8);
+}
+
+#usScreen .album-page .photo-placeholder small {
+    margin-top: 8px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: #aebcff;
+}
+
+
+/* =========================
+   PAGE LABEL
+========================= */
+
+#usScreen .album-page-label {
+    margin-bottom: 12px;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    color: #aebcff;
+}
+
+
+/* =========================
+   NOTE — RIGHT
+========================= */
+
+#usScreen .album-note {
+    position: absolute;
+
+    right: -300px;
+    top: 50%;
+
+    width: 260px;
+
+    transform: translateY(-50%);
+
+    text-align: left;
+
+    background:
+        rgba(18,20,35,.88);
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius: 16px;
+
+    padding: 24px 22px;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.38),
+        inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+#usScreen .album-note span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    color: #aebcff;
+}
+
+#usScreen .album-note p {
+    margin: 0;
+
+    font-size: 12px;
+    line-height: 1.7;
+
+    color: rgba(235,232,248,.7);
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+#usScreen .album-controls {
+    grid-column: 1;
+    grid-row: 2;
+
+    width: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    margin: 5px 0 0;
+}
+
+#usScreen .album-controls button {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(170,180,255,.22);
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.04);
+
+    color: #eeeaff;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+}
+
+#usScreen .album-controls button:hover {
+    transform: translateY(-2px);
+
+    background:
+        rgba(120,130,220,.14);
+
+    box-shadow:
+        0 0 18px rgba(110,120,220,.15);
+}
+
+#usScreen #memoryPageNumber {
+    min-width: 55px;
+
+    text-align: center;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    color: rgba(235,232,248,.6);
+}
+
+
+/* =========================
+   PAGE TURN ANIMATION
+========================= */
+
+#usScreen .album-page.page-turn-next {
+    animation:
+        albumNext .75s ease forwards;
+}
+
+#usScreen .album-page.page-turn-prev {
+    animation:
+        albumPrev .75s ease forwards;
+}
+
+@keyframes albumNext {
+
+    0% {
+        opacity: 1;
+        transform:
+            translateX(0)
+            rotateY(0)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translateX(-35px)
+            rotateY(12deg)
+            scale(.96);
+    }
+}
+
+@keyframes albumPrev {
+
+    0% {
+        opacity: 1;
+        transform:
+            translateX(0)
+            rotateY(0)
+            scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translateX(35px)
+            rotateY(-12deg)
+            scale(.96);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    #usScreen .memory-album {
+        display: flex;
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    #usScreen .album-book {
+        width: min(90vw, 500px);
+        height: 390px;
+    }
+
+    #usScreen .album-note {
+        position: absolute;
+
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: -150px;
+
+        transform: translateX(-50%);
+
+        width: min(85vw, 350px);
+    }
+
+    #usScreen .album-controls {
+        width: 100%;
+        margin-top: 155px;
+    }
+}
     
 </style>
 </head>
