@@ -3065,42 +3065,112 @@ h1,
     pointer-events: none;
 }
 /* =========================================
-   MEMORY ALBUM — CLEAN CENTERED LAYOUT
+   MEMORY ALBUM — ALBUM LEFT / NOTES RIGHT
 ========================================= */
 
-.memory-album {
-    width: min(88vw, 420px) !important;
-    margin: 24px auto 20px !important;
+.memories-content {
+    width: min(92vw, 900px);
+    margin: 25px auto 0;
+    text-align: center;
 }
 
+.memory-album {
+    width: 100%;
+    margin: 30px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+/* ALBUM — LEFT */
 .album-book {
-    position: relative !important;
-    width: 100% !important;
-    max-width: 420px !important;
-    height: 390px !important;
-    margin: 0 auto !important;
+    position: relative;
+    width: 420px;
+    height: 390px;
+    flex-shrink: 0;
 }
 
 .album-page {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    box-sizing: border-box !important;
+    position: absolute;
+    inset: 0;
+}
+
+/* NOTES — RIGHT */
+.album-info {
+    width: 260px;
+    text-align: left;
+}
+
+.album-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    line-height: 1.15;
+    margin: 10px 0 15px;
+    color: #f7f4ff;
+}
+
+.album-info-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #aebcff;
+}
+
+.album-info p {
+    font-size: 12px;
+    line-height: 1.7;
+    color: rgba(235,232,248,.65);
+}
+
+.album-info-line {
+    width: 45px;
+    height: 1px;
+    margin: 22px 0 14px;
+    background: #aebcff;
+    opacity: .6;
+}
+
+.album-hint {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(235,232,248,.45);
 }
 
 .album-controls {
-    width: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 15px auto 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
 }
 
 .album-controls button {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+
+    .memory-album {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .album-info {
+        width: min(88vw, 420px);
+        text-align: center;
+        order: 2;
+    }
+
+    .album-book {
+        width: min(88vw, 420px);
+    }
+
+    .album-info-line {
+        margin: 20px auto 14px;
+    }
 }
     
 </style>
@@ -4416,15 +4486,10 @@ h1,
             that came after...
         </p>
 
-   <div class="memory-album">
+ <div class="memory-album">
 
     <div class="album-book">
-        ...
-    </div>
 
-</div>
-
-    <div class="album-book">
 
         <!-- PAGE 1 -->
         <div class="album-page page-1 active">
