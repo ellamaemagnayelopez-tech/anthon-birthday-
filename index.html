@@ -3231,6 +3231,268 @@ h1,
     letter-spacing: 2px;
     color: rgba(255,255,255,.58);
 }
+
+    /* =========================================
+   📖 OUR MEMORIES — PREMIUM NOTEBOOK
+========================================= */
+
+.memory-album {
+    width: min(88vw, 420px);
+    margin: 24px auto 20px;
+}
+
+.album-book {
+    position: relative;
+    width: 100%;
+    height: 390px;
+    perspective: 1600px;
+}
+
+/* NOTEBOOK BACK COVER */
+
+.album-book::before {
+    content: "";
+    position: absolute;
+    inset: 7px -5px -5px 7px;
+
+    background: rgba(15, 13, 22, .72);
+
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 5px 18px 18px 5px;
+
+    box-shadow:
+        0 25px 55px rgba(0,0,0,.35),
+        inset 10px 0 18px rgba(255,255,255,.025);
+
+    z-index: 0;
+}
+
+
+/* EVERY PAGE */
+
+.album-page {
+    position: absolute;
+    inset: 0;
+
+    padding: 18px 20px 17px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(31,28,40,.94),
+            rgba(18,16,25,.94)
+        );
+
+    border: 1px solid rgba(255,255,255,.14);
+
+    border-radius: 5px 18px 18px 5px;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.30),
+        inset 9px 0 18px rgba(255,255,255,.025);
+
+    transform-origin: left center;
+
+    opacity: 0;
+    transform: rotateY(180deg);
+
+    pointer-events: none;
+
+    transition:
+        transform .75s cubic-bezier(.22,.61,.36,1),
+        opacity .25s ease;
+
+    z-index: 1;
+}
+
+
+/* ACTIVE PAGE */
+
+.album-page.active {
+    opacity: 1;
+    transform: rotateY(0deg);
+    pointer-events: auto;
+    z-index: 5;
+}
+
+
+/* PAGE NUMBER / YEAR */
+
+.album-page-label {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 13px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: rgba(255,255,255,.48);
+}
+
+
+/* PHOTO */
+
+.photo-placeholder {
+    height: 218px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px dashed rgba(255,255,255,.18);
+    border-radius: 3px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.055),
+            rgba(255,255,255,.012)
+        );
+
+    color: rgba(255,255,255,.72);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-placeholder::before {
+    content: "✦";
+
+    position: absolute;
+    top: 10px;
+    right: 13px;
+
+    font-size: 11px;
+    opacity: .35;
+}
+
+.photo-placeholder span {
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.photo-placeholder small {
+    margin-top: 9px;
+
+    font-size: 8px;
+    letter-spacing: 1.8px;
+
+    color: rgba(255,255,255,.42);
+}
+
+
+/* MEMORY NOTE */
+
+.album-note {
+    margin-top: 13px;
+    padding-left: 3px;
+}
+
+.album-note span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 8px;
+    letter-spacing: 2px;
+
+    color: rgba(220,190,255,.65);
+}
+
+.album-note p {
+    margin: 0;
+
+    font-size: 11px;
+    line-height: 1.55;
+
+    color: rgba(255,255,255,.70);
+}
+
+
+/* NOTEBOOK SPINE EFFECT */
+
+.album-book::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 10px;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(0,0,0,.42),
+            rgba(255,255,255,.05),
+            transparent
+        );
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+
+/* CONTROLS */
+
+.album-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-top: 15px;
+}
+
+.album-controls button {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    background: rgba(20,18,28,.65);
+
+    color: rgba(255,255,255,.85);
+
+    font-size: 23px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease;
+}
+
+.album-controls button:hover {
+    transform: scale(1.08);
+
+    background: rgba(255,255,255,.10);
+
+    border-color: rgba(255,255,255,.25);
+}
+
+#memoryPageNumber {
+    min-width: 55px;
+
+    text-align: center;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    color: rgba(255,255,255,.45);
+}
     
 </style>
 </head>
@@ -4545,67 +4807,199 @@ h1,
             that came after...
         </p>
 
-        <div class="memory-album">
+       <div class="memory-album">
 
     <div class="album-book">
 
+        <!-- PAGE 1 -->
         <div class="album-page page-1 active">
+
+            <div class="album-page-label">
+                MEMORY 01 · 2018
+            </div>
+
             <div class="photo-placeholder">
                 <span>PHOTO 01</span>
                 <small>COLLEGE US</small>
             </div>
+
+            <div class="album-note">
+                <span>THE BEGINNING</span>
+                <p>
+                    Somewhere between classes,
+                    deadlines, and random conversations...
+                    we happened. 🤍
+                </p>
+            </div>
+
         </div>
 
+
+        <!-- PAGE 2 -->
         <div class="album-page page-2">
+
+            <div class="album-page-label">
+                MEMORY 02 · EARLY DAYS
+            </div>
+
             <div class="photo-placeholder">
                 <span>PHOTO 02</span>
                 <small>OUR EARLY DAYS</small>
             </div>
+
+            <div class="album-note">
+                <span>BACK THEN</span>
+                <p>
+                    We didn't know it yet,
+                    but these little moments
+                    were becoming our story.
+                </p>
+            </div>
+
         </div>
 
+
+        <!-- PAGE 3 -->
         <div class="album-page page-3">
+
+            <div class="album-page-label">
+                MEMORY 03 · 04.16.2018
+            </div>
+
             <div class="photo-placeholder">
                 <span>PHOTO 03</span>
-                <small>FIRST DATE</small>
+                <small>FIRST DATE · DREAMY CAFE</small>
             </div>
+
+            <div class="album-note">
+                <span>THE FIRST DATE</span>
+                <p>
+                    April 16, 2018.
+                    One simple date that somehow
+                    became the beginning of everything.
+                </p>
+            </div>
+
         </div>
 
+
+        <!-- PAGE 4 -->
         <div class="album-page page-4">
+
+            <div class="album-page-label">
+                MEMORY 04 · US
+            </div>
+
             <div class="photo-placeholder">
                 <span>PHOTO 04</span>
                 <small>THE LITTLE MOMENTS</small>
             </div>
+
+            <div class="album-note">
+                <span>MY FAVORITE</span>
+                <p>
+                    Not every memory was a big adventure.
+                    Some were just ordinary days
+                    that felt better because it was you.
+                </p>
+            </div>
+
         </div>
 
+
+        <!-- PAGE 5 -->
         <div class="album-page page-5">
+
+            <div class="album-page-label">
+                MEMORY 05 · 2025
+            </div>
+
             <div class="photo-placeholder">
                 <span>PHOTO 05</span>
                 <small>CEBU 2025</small>
             </div>
+
+            <div class="album-note">
+                <span>ONE FOR THE BOOKS</span>
+                <p>
+                    A trip, a lot of laughs,
+                    and another memory
+                    I'd choose again. 🌊
+                </p>
+            </div>
+
         </div>
 
+
+        <!-- PAGE 6 -->
         <div class="album-page page-6">
+
+            <div class="album-page-label">
+                MEMORY 06 · 9 YEARS
+            </div>
+
             <div class="photo-placeholder">
                 <span>PHOTO 06</span>
                 <small>MORE MEMORIES</small>
             </div>
+
+            <div class="album-note">
+                <span>HOW IS IT 9 YEARS?</span>
+                <p>
+                    Nine years of stories,
+                    inside jokes, random moments,
+                    and choosing each other.
+                </p>
+            </div>
+
         </div>
 
+
+        <!-- PAGE 7 -->
         <div class="album-page page-7">
+
+            <div class="album-page-label">
+                MEMORY 07 · NOW
+            </div>
+
             <div class="photo-placeholder">
                 <span>PHOTO 07</span>
                 <small>AND HERE WE ARE</small>
             </div>
+
+            <div class="album-note">
+                <span>STILL YOU</span>
+                <p>
+                    And after all these years...
+                    you're still my favorite person. 🥹🤍
+                </p>
+            </div>
+
         </div>
 
     </div>
 
+
+    <!-- ALBUM CONTROLS -->
+
     <div class="album-controls">
-        <button onclick="previousMemory()">‹</button>
 
-        <span id="memoryPageNumber">1 / 7</span>
+        <button
+            type="button"
+            onclick="previousMemory()">
+            ‹
+        </button>
 
-        <button onclick="nextMemory()">›</button>
+        <span id="memoryPageNumber">
+            1 / 7
+        </span>
+
+        <button
+            type="button"
+            onclick="nextMemory()">
+            ›
+        </button>
+
     </div>
 
 </div>
