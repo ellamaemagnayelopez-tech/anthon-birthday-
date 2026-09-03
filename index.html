@@ -3065,103 +3065,42 @@ h1,
     pointer-events: none;
 }
 /* =========================================
-   MEMORY ALBUM — STORY + ALBUM LAYOUT
+   MEMORY ALBUM — CLEAN CENTERED LAYOUT
 ========================================= */
 
 .memory-album {
-    width: min(92vw, 900px);
-    margin: 35px auto;
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-}
-
-.album-info {
-    flex: 1;
-    max-width: 360px;
-    text-align: left;
-}
-
-.album-info .eyebrow {
-    font-size: 9px;
-    letter-spacing: 3px;
-    color: rgba(220,190,255,.55);
-    margin-bottom: 12px;
-}
-
-.album-info h2 {
-    margin: 0 0 15px;
-    font-size: 28px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: rgba(255,255,255,.92);
-}
-
-.album-info p {
-    margin: 0;
-    font-size: 12px;
-    line-height: 1.8;
-    color: rgba(255,255,255,.58);
-}
-
-.album-info .flip-hint {
-    margin-top: 22px;
-    font-size: 9px;
-    letter-spacing: 1.5px;
-    color: rgba(220,190,255,.55);
+    width: min(88vw, 420px) !important;
+    margin: 24px auto 20px !important;
 }
 
 .album-book {
-    flex: 0 0 420px;
-    width: 420px;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    height: 390px !important;
+    margin: 0 auto !important;
 }
 
-/* HIDE OLD NAVIGATION */
+.album-page {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+}
 
 .album-controls {
-    display: none !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 15px auto 0 !important;
 }
 
-/* CLICKABLE ALBUM */
-
-.album-book {
-    cursor: pointer;
-}
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .memory-album {
-        width: min(90vw, 420px);
-        flex-direction: column;
-        gap: 25px;
-        margin: 30px auto;
-    }
-
-    .album-info {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .album-info h2 {
-        font-size: 24px;
-    }
-
-    .album-info p {
-        font-size: 11px;
-    }
-
-    .album-info .flip-hint {
-        margin-top: 15px;
-    }
-
-    .album-book {
-        flex: none;
-        width: 100%;
-    }
+.album-controls button {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
     
 </style>
@@ -4477,21 +4416,12 @@ h1,
             that came after...
         </p>
 
-       <div class="memory-album">
-        <div class="album-info">
-    <div class="eyebrow">A LITTLE PIECE OF US</div>
+   <div class="memory-album">
 
-    <h2>Our Memories</h2>
-
-    <p>
-        From the little moments to the unforgettable ones,
-        these are the memories I would choose to keep
-        over and over again.
-    </p>
-
-    <div class="flip-hint">
-        ✦ Click the album to flip through our memories
+    <div class="album-book">
+        ...
     </div>
+
 </div>
 
     <div class="album-book">
