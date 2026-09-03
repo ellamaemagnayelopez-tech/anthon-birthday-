@@ -2364,6 +2364,159 @@ button {
     z-index: 50;
     pointer-events: auto;
 }
+
+    /* ===============================
+   MIDNIGHT + ROMANTIC SCRAPBOOK
+   THEME UPGRADE
+================================ */
+
+/* MAIN BACKGROUND */
+
+body {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(201, 148, 145, .12), transparent 25%),
+        radial-gradient(circle at 80% 75%, rgba(214, 183, 122, .10), transparent 30%),
+        linear-gradient(135deg, #0d0d14, #191621 55%, #100f16);
+
+    color: #f3ede4;
+}
+
+/* SUBTLE CINEMATIC GLOW */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.35) 1px, transparent 1px),
+        radial-gradient(circle, rgba(214,183,122,.25) 1px, transparent 1px);
+
+    background-size: 110px 110px, 180px 180px;
+    background-position: 20px 30px, 70px 90px;
+
+    opacity: .35;
+    z-index: -1;
+}
+
+/* SCREENS */
+
+.screen,
+.chapter-screen {
+    background: transparent;
+}
+
+/* HEADINGS */
+
+h1,
+.opening-title,
+.intro-title,
+.photo-title,
+.scrapbook-title {
+    color: #f5eee6;
+}
+
+/* REGULAR TEXT */
+
+.subtitle,
+.photo-text,
+.family-intro p,
+.dog-intro p,
+.sibling-message p,
+.cute-note p {
+    color: #c9c0bc;
+}
+
+/* SMALL LABELS */
+
+.chapter-number,
+.photo-date,
+.chapter-header,
+.dog-intro span,
+.family-intro span {
+    color: #d6b77a;
+}
+
+/* PRIMARY BUTTONS */
+
+.yes,
+.back,
+.arrow-button {
+    background: linear-gradient(135deg, #c99491, #9d6868);
+    color: #fff8f2;
+
+    box-shadow:
+        0 8px 25px rgba(201, 148, 145, .18);
+}
+
+.yes:hover,
+.back:hover,
+.arrow-button:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 12px 30px rgba(201, 148, 145, .28);
+}
+
+/* SECONDARY BUTTONS */
+
+.no,
+.next {
+    color: #c9c0bc;
+}
+
+/* SCRAPBOOK / PHOTO ELEMENTS */
+
+.photo-card,
+.sibling-photo,
+.child-photo,
+.big-photo,
+.small-photo,
+.dog-placeholder {
+    background: #eee6dc;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, .35);
+}
+
+/* PAPER NOTE */
+
+.cute-note {
+    background: #f3ede4;
+    color: #292725;
+}
+
+/* PROGRESS BAR */
+
+.gift-progress {
+    background: rgba(243, 237, 228, .12);
+}
+
+.gift-progress-bar {
+    background: linear-gradient(
+        90deg,
+        #9d6868,
+        #c99491,
+        #d6b77a
+    );
+}
+
+/* CHAPTER HEADER */
+
+.chapter-header {
+    border-bottom: 1px solid rgba(243, 237, 228, .08);
+    padding-bottom: 10px;
+}
+
+/* PHOTO BORDERS */
+
+.sibling-photo,
+.child-photo,
+.big-photo,
+.small-photo,
+.dog-placeholder {
+    border-color: #f3ede4;
+}
     
 </style>
 </head>
