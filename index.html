@@ -3035,6 +3035,29 @@ h1,
         transform: translateY(-20px);
     }
 }
+    .cosmic-dust {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.45) 1px, transparent 2px);
+    background-size: 180px 180px;
+
+    opacity: .45;
+    animation: dustMove 25s linear infinite;
+}
+
+@keyframes dustMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-40px);
+    }
+}
     
 </style>
 </head>
