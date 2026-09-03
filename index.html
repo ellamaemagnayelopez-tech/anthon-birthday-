@@ -4942,16 +4942,6 @@ h1,
                 <span>PHOTO 01</span>
                 <small>COLLEGE US</small>
             </div>
-
-            <div class="album-note">
-                <span>THE BEGINNING</span>
-                <p>
-                    Somewhere between classes,
-                    deadlines, and random conversations...
-                    we happened. 🤍
-                </p>
-            </div>
-
         </div>
 
 
@@ -4965,15 +4955,6 @@ h1,
             <div class="photo-placeholder">
                 <span>PHOTO 02</span>
                 <small>OUR EARLY DAYS</small>
-            </div>
-
-            <div class="album-note">
-                <span>BACK THEN</span>
-                <p>
-                    We didn't know it yet,
-                    but these little moments
-                    were becoming our story.
-                </p>
             </div>
 
         </div>
@@ -4991,15 +4972,6 @@ h1,
                 <small>FIRST DATE · DREAMY CAFE</small>
             </div>
 
-            <div class="album-note">
-                <span>THE FIRST DATE</span>
-                <p>
-                    April 16, 2018.
-                    One simple date that somehow
-                    became the beginning of everything.
-                </p>
-            </div>
-
         </div>
 
 
@@ -5015,14 +4987,6 @@ h1,
                 <small>THE LITTLE MOMENTS</small>
             </div>
 
-            <div class="album-note">
-                <span>MY FAVORITE</span>
-                <p>
-                    Not every memory was a big adventure.
-                    Some were just ordinary days
-                    that felt better because it was you.
-                </p>
-            </div>
 
         </div>
 
@@ -5037,15 +5001,6 @@ h1,
             <div class="photo-placeholder">
                 <span>PHOTO 05</span>
                 <small>CEBU 2025</small>
-            </div>
-
-            <div class="album-note">
-                <span>ONE FOR THE BOOKS</span>
-                <p>
-                    A trip, a lot of laughs,
-                    and another memory
-                    I'd choose again. 🌊
-                </p>
             </div>
 
         </div>
@@ -5063,15 +5018,6 @@ h1,
                 <small>MORE MEMORIES</small>
             </div>
 
-            <div class="album-note">
-                <span>HOW IS IT 9 YEARS?</span>
-                <p>
-                    Nine years of stories,
-                    inside jokes, random moments,
-                    and choosing each other.
-                </p>
-            </div>
-
         </div>
 
 
@@ -5087,15 +5033,35 @@ h1,
                 <small>AND HERE WE ARE</small>
             </div>
 
-            <div class="album-note">
-                <span>STILL YOU</span>
-                <p>
-                    And after all these years...
-                    you're still my favorite person. 🥹🤍
-                </p>
-            </div>
-
         </div>
+
+    </div>
+
+       </div>
+
+    <div class="album-info">
+
+        <span class="album-info-label">
+            OUR STORY
+        </span>
+
+        <h2>
+            Then there was us. 🤍
+        </h2>
+
+        <div class="album-info-line"></div>
+
+        <p>
+            From college days to everything that came after,
+            these little moments became our story.
+            Nine years of memories, random adventures,
+            ordinary days, and countless reasons why
+            I'd still choose you. 🤍
+        </p>
+
+        <span class="album-hint">
+            CLICK THE ALBUM TO FLIP
+        </span>
 
     </div>
 
@@ -5123,8 +5089,15 @@ h1,
     </div>
 
 </div>
+
+ <button
+    type="button"
+    class="chapter-next-btn"
+    onclick="showTintin()">
+    NEXT CHAPTER →
+</button>
         
-  <!-- TINTIN -->
+<!-- TINTIN -->
 
 <div
     class="chapter-screen hidden"
@@ -6347,27 +6320,42 @@ function previousMemory() {
 }
 
 
-/* CLICK ALBUM TO FLIP */
-document.addEventListener("DOMContentLoaded", function () {
+/* =========================================
+   CLICK ALBUM TO FLIP
+========================================= */
 
-    const album = document.querySelector(".album-book");
+#usScreen .album-book {
+    cursor: pointer;
+}
 
-    if (!album) return;
+/* subtle glow when hovering album */
+#usScreen .album-book:hover .photo-placeholder {
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.45),
+        0 0 35px rgba(140,150,255,.16);
 
-    album.addEventListener("click", function (event) {
+    transform: scale(1.01);
+}
 
-        const rect = album.getBoundingClientRect();
-        const clickX = event.clientX - rect.left;
+/* click instruction */
+#usScreen .album-book::after {
+    content: "←  CLICK TO FLIP  →";
 
-        /* LEFT SIDE = PREVIOUS */
-        if (clickX < rect.width / 2) {
-            previousMemory();
-        }
+    position: absolute;
+    left: 50%;
+    bottom: -35px;
 
-        /* RIGHT SIDE = NEXT */
-        else {
-            nextMemory();
-        }
+    transform: translateX(-50%);
+
+    font-size: 9px;
+    letter-spacing: 2.5px;
+
+    color: rgba(235,232,248,.55);
+
+    white-space: nowrap;
+
+    pointer-events: none;
+}
 
     });
 
